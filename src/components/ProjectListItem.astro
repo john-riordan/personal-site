@@ -1,0 +1,59 @@
+---
+const { url, title, description, tags } = Astro.props;
+---
+
+<li class="project">
+	<h4 class="title"><a href={url}>{title}</a></h4>
+  <div class="content">
+    <p class="description">{description}</p>
+    {tags && (
+      <ul class="tags">
+        {tags.map(tag => <li class="tag">{tag}</li>)}
+      </ul>
+    )}
+  </div>
+</li>
+
+<style lang="scss">
+  .project {
+    --padd: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-left: var(--padd);
+  }
+  .title {
+    position: relative;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding-left: var(--padd);
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 0.25rem;
+      width: 0.25rem;
+      background: var(--accent);
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  .description {
+    font-size: 0.875rem;
+    color: var(--c5);
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.75rem;
+  }
+</style>

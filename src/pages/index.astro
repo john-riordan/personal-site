@@ -1,20 +1,132 @@
 ---
-let title = 'John Riordan';
----
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>{title}</title>
+import ProjectListItem from '../components/ProjectListItem.astro';
 
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	<link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
-</head>
-<body>
-	<main>
-		<h1 class="title">John Riordan</h1>
-		<p class="twitter">@<a href="https://twitter.com/JohnRiordan">johnriordan</a></p>
-		<p>brb 🐱‍👤</p>
-	</main>
-</body>
+const projects = [
+	{
+		url: 'https://runeforge.gg',
+		title: 'RuneForge',
+		description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+							has been the industry's standard dummy text ever since the 1500s`,
+	},
+	{
+		url: 'https://lolshop.gg',
+		title: 'LoL Shop',
+		description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+							has been the industry's standard dummy text ever since the 1500s`,
+		tags: ['React', 'SPA', 'League of Legends']
+	},
+	{
+		url: 'https://championsqueue.gg',
+		title: 'ChampionsQueue.gg',
+		description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+							has been the industry's standard dummy text ever since the 1500s`,
+		tags: ['svelte', 'SPA', 'League of Legends']
+	},
+	{
+		url: 'https://worldforge.gg',
+		title: 'World Forge',
+		description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+							has been the industry's standard dummy text ever since the 1500s`,
+		tags: ['svelte', 'SPA', 'New World']
+	}
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>John Riordan</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,900&family=Source+Code+Pro:ital@0;1&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="stylesheet" href={Astro.resolve('../styles/global.css')} />
+	</head>
+	<body>
+		<main>
+			<h1 class="title">
+				<span>John</span>
+				<span><span class="rio">Rio</span>rdan</span>
+			</h1>
+			<p class="byline">
+				<span>Product Designer/Engineer</span>
+				<a href="https://twitter.com/JohnRiordan">@johnriordan</a>
+			</p>
+			<div>
+				<h2 class="section-title">Projects</h2>
+				<ul class="projects">
+					{projects.map(p => (
+						<ProjectListItem {...p} />
+					))}
+				</ul>
+			</div>
+		</main>
+	</body>
 </html>
+
+<style lang="scss">
+	main {
+		padding: 12.5rem;
+	}
+	.title {
+		font-size: 4rem;
+		text-transform: uppercase;
+		line-height: 1;
+		color: var(--c6);
+
+		> span {
+			display: block;
+		}
+
+		.rio {
+			position: relative;
+			color: var(--c1);
+
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 0.25rem;
+				background: var(--accent);
+			}
+		}
+	}
+
+	.byline {
+		display: flex;
+		gap: 2.5rem;
+		color: var(--c3);
+		margin-block: 2.5rem;
+
+		a {
+			color: var(--accent);
+		}
+	}
+
+	.section-title {
+		font-size: 3rem;
+		line-height: 1;
+		margin-block-end: 1rem;
+		margin-block-start: 5rem;
+		color: var(--c9);
+		transform: translateX(calc(3rem * -1));
+	}
+
+	.projects {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		width: 60ch;
+	}
+</style>
