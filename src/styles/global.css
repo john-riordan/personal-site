@@ -26,8 +26,27 @@
 	--c9: hsl(var(--c9-hsl));
 	--c10: hsl(var(--c10-hsl));
 
-	--accent-hsl: 40deg 100% 60%;
+	--accent-hsl: var(--accent-h) 100% 60%;
 	--accent: hsl(var(--accent-hsl));
+	animation: rotate-accent 90s linear infinite;
+}
+
+@supports (background: paint(something)) {
+	@property --accent-h {
+		syntax: '<angle>';
+		inherits: false;
+		initial-value: 40deg;
+	}
+}
+
+@keyframes rotate-accent {
+	0%,
+	100% {
+		--accent-h: 40deg;
+	}
+	50% {
+		--accent-h: 180deg;
+	}
 }
 
 body {
@@ -37,8 +56,8 @@ body {
 	line-height: 1.5;
 	width: 100%;
 	min-height: 100vh;
-	background: var(--c1);
-	color: var(--c10);
+	background: var(--c10);
+	color: var(--c1);
 }
 
 h1,
@@ -53,14 +72,26 @@ h5 {
 	letter-spacing: 0.1rem;
 }
 
-@media (prefers-color-scheme: dark) {
-	body {
-		background: var(--c10);
-		color: var(--c1);
+@media (prefers-color-scheme: light) {
+	:root {
+		--c1-hsl: 220deg 7% 10%;
+		--c2-hsl: 220deg 7% 15%;
+		--c3-hsl: 220deg 7% 20%;
+		--c4-hsl: 220deg 7% 25%;
+		--c5-hsl: 220deg 7% 30%;
+		--c6-hsl: 220deg 7% 35%;
+		--c7-hsl: 220deg 7% 45%;
+		--c8-hsl: 220deg 7% 60%;
+		--c9-hsl: 220deg 7% 70%;
+		--c10-hsl: 220deg 7% 90%;
 	}
 }
 
 a {
 	color: inherit;
-	text-decoration: none;
+	text-decoration-color: var(--accent);
+}
+
+p {
+	font-size: 0.875rem;
 }

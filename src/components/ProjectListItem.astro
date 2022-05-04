@@ -17,9 +17,6 @@ const { url, title, description, tags } = Astro.props;
 <style lang="scss">
   .project {
     --padd: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
   }
   .content {
     display: flex;
@@ -30,10 +27,9 @@ const { url, title, description, tags } = Astro.props;
   .title {
     position: relative;
     font-size: 1.5rem;
-    line-height: 1;
     padding-left: var(--padd);
 
-    &::after {
+    &::before {
       content: '';
       position: absolute;
       height: 0.25rem;
@@ -46,14 +42,28 @@ const { url, title, description, tags } = Astro.props;
   }
   .description {
     font-size: 0.875rem;
-    color: var(--c5);
+    color: var(--c4);
   }
   .tags {
     display: flex;
-    gap: 0.5rem;
+    gap: 1.5rem;
     list-style: none;
     margin: 0;
     padding: 0;
-    font-size: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--c5);
+
+    .tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &::before {
+        content: '';
+        height: 0.5rem;
+        width: 0.25rem;
+        background: var(--c8);
+      }
+    }
   }
 </style>
