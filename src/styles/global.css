@@ -67,7 +67,7 @@ main {
 	box-sizing: content-box;
 	position: relative;
 	padding: 11vw;
-	max-width: 80ch;
+	max-width: 60ch;
 }
 
 h1,
@@ -104,8 +104,4 @@ a {
 }
 a:hover {
 	color: var(--accent);
-}
-
-p {
-	font-size: 0.875rem;
 }
