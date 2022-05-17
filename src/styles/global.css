@@ -7,11 +7,11 @@
 	--c1-hsl: 220deg 7% 90%;
 	--c2-hsl: 220deg 7% 85%;
 	--c3-hsl: 220deg 7% 80%;
-	--c4-hsl: 220deg 7% 75%;
+	--c4-hsl: 220deg 7% 70%;
 	--c5-hsl: 220deg 7% 65%;
 	--c6-hsl: 220deg 7% 50%;
 	--c7-hsl: 220deg 7% 35%;
-	--c8-hsl: 220deg 7% 25%;
+	--c8-hsl: 220deg 7% 20%;
 	--c9-hsl: 220deg 7% 15%;
 	--c10-hsl: 220deg 7% 10%;
 
@@ -26,6 +26,7 @@
 	--c9: hsl(var(--c9-hsl));
 	--c10: hsl(var(--c10-hsl));
 
+	--accent-h: 40deg;
 	--accent-hsl: var(--accent-h) 100% 60%;
 	--accent: hsl(var(--accent-hsl));
 	animation: rotate-accent 90s linear infinite;
@@ -50,6 +51,7 @@
 }
 
 body {
+	position: relative;
 	font-family: 'Source Code Pro', monospace;
 	font-size: 1rem;
 	font-weight: 400;
@@ -58,6 +60,14 @@ body {
 	min-height: 100vh;
 	background: var(--c10);
 	color: var(--c1);
+	overflow-x: hidden;
+}
+
+main {
+	box-sizing: content-box;
+	position: relative;
+	padding: 11vw;
+	max-width: 80ch;
 }
 
 h1,
@@ -90,6 +100,10 @@ h5 {
 a {
 	color: inherit;
 	text-decoration-color: var(--accent);
+	transition: color 0.2s ease-in-out;
+}
+a:hover {
+	color: var(--accent);
 }
 
 p {
