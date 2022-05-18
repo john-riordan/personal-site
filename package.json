@@ -9,10 +9,19 @@
 		"preview": "astro preview"
 	},
 	"devDependencies": {
-		"astro": "^0.22.13",
-		"prettier-plugin-astro": "^0.0.12"
+		"@astrojs/react": "^0.1.2",
+		"astro": "^0.26.1",
+		"prettier-plugin-astro": "^0.0.12",
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0"
 	},
 	"dependencies": {
-		"prettier": "^2.6.2"
+		"@react-three/drei": "^9.11.0",
+		"@react-three/fiber": "^8.0.17",
+		"@splinetool/loader": "^0.9.53",
+		"@splinetool/r3f-spline": "^1.0.1",
+		"prettier": "^2.6.2",
+		"sass": "^1.51.0",
+		"three": "^0.140.2"
 	}
 }

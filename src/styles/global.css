@@ -53,7 +53,7 @@
 body {
 	position: relative;
 	font-family: 'Source Code Pro', monospace;
-	font-size: 1rem;
+	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.5;
 	width: 100%;
@@ -61,6 +61,31 @@ body {
 	background: var(--c10);
 	color: var(--c1);
 	overflow-x: hidden;
+}
+
+@media screen and (min-width: 1920px) {
+	body {
+		font-size: 1.125em;
+	}
+}
+
+body::-webkit-scrollbar {
+	width: 0.5rem;
+}
+body::-webkit-scrollbar-thumb {
+	background: var(--c7);
+}
+body::-webkit-scrollbar-thumb:hover {
+	background: var(--accent);
+}
+
+#root,
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
 }
 
 main {
@@ -104,4 +129,41 @@ a {
 }
 a:hover {
 	color: var(--accent);
+}
+
+svg {
+	display: block;
+	width: 1em;
+	height: 1em;
+}
+
+ul,
+li {
+	--padd: 1.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+@media screen and (max-width: 768px) {
+	ul,
+	li {
+		--padd: 1rem;
+	}
+}
+li {
+	position: relative;
+}
+.list-item-title {
+	position: relative;
+	padding-left: var(--padd);
+}
+.list-item-title::before {
+	content: '';
+	position: absolute;
+	height: 0.25rem;
+	width: 0.25rem;
+	background: var(--accent);
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
 }

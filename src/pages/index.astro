@@ -1,5 +1,12 @@
 ---
 import ProjectListItem from '../components/ProjectListItem.astro';
+import Twitter from '../components/SVGs/Twitter.astro';
+import Discord from '../components/SVGs/Discord.astro';
+import LinkedIn from '../components/SVGs/LinkedIn.astro';
+import Mail from '../components/SVGs/Mail.astro';
+import { SOCIALS } from '../constants';
+
+import '../styles/global.css'
 
 const projects = [
 	{
@@ -52,7 +59,6 @@ const projects = [
 		/>
 
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="stylesheet" href={Astro.resolve('../styles/global.css')} />
 	</head>
 	<body>
 		<main>
@@ -62,7 +68,7 @@ const projects = [
 			</h1>
 			<p class="byline">
 				<span>Senior Product Designer/Engineer @ <a href="https://blitz.gg">Blitz.gg</a></span>
-				<a href="https://twitter.com/JohnRiordan">@johnriordan</a>
+				<a href={SOCIALS.twitter}>@johnriordan</a>
 			</p>
 			<div class="sections">
 				<section>
@@ -70,12 +76,30 @@ const projects = [
 					<p>Gamer nerd 🤓 with a passion for solving problems and designing solutions for other gamers. Most call me Rio.</p>
 				</section>
 				<section>
-				<h2 class="section-title">Projects</h2>
+					<h2 class="section-title">Projects</h2>
 					<p>A few of the personal/passion projects (among many) that I’ve desgined and built over the last few years. 🚀</p>
 					<ul class="projects">
 						{projects.map(p => (
 							<ProjectListItem {...p} />
 						))}
+					</ul>
+				</section>
+				<section>
+					<h2 class="section-title">Contact</h2>
+					<p>I'm "incredibly online" so there are a number of ways to reach me. Pick your poison. 🧪</p>
+					<ul class="contact-list">
+						<li class="list-item-title">
+							<Twitter /><a href={SOCIALS.twitter}>@johnriordan</a>
+						</li>
+						<li class="list-item-title">
+							<Discord />Rio#2678
+						</li>
+						<li class="list-item-title">
+							<LinkedIn /><a href={SOCIALS.linkedin}>LinkedIn</a>
+						</li>
+						<li class="list-item-title">
+							<Mail /><a href={`mailto:${SOCIALS.email}?subject=Yo Rio, HUGE fan 🙌`}>iam.john.riordan@gmail.com</a>
+						</li>
 					</ul>
 				</section>
 			</div>
@@ -85,7 +109,7 @@ const projects = [
 
 <style lang="scss">
 	.title {
-		font-size: 4rem;
+		font-size: 4.5rem;
 		text-transform: uppercase;
 		line-height: 1;
 		color: var(--c6);
@@ -147,10 +171,10 @@ const projects = [
 		}
 	}
 	.section-title {
-		font-size: 3rem;
+		font-size: 2.75rem;
 		line-height: 1;
-		color: var(--c9);
-		transform: translateX(-2.5vw);
+		color: var(--c8);
+		transform: translateX(-2vw);
 
 		@media screen and (max-width: 768px) {
 			font-size: 2rem;
@@ -166,5 +190,23 @@ const projects = [
 		padding: 0;
 		margin: 0;
 		padding-top: 1rem;
+	}
+
+	.contact-list {
+		display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+		li {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+
+			:global(svg) {
+				width: 1rem;
+				height: auto;
+				fill: var(--c7);
+			}
+		}
 	}
 </style>
