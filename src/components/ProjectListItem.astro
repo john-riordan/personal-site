@@ -1,18 +1,12 @@
 ---
 import ShareIcon from './SVGs/ShareIcon.astro';
-const { url, title, description, tags } = Astro.props;
+const { url, title, description } = Astro.props;
 ---
 
 <li class="project">
 	<h4 class="list-item-title title"><a href={url}>{title} <ShareIcon /></a></h4>
 	<div class="content">
 		<p class="description" set:html={description}></p>
-		<!-- <p class="more">Tell me more</p> -->
-		<!-- {tags && (
-      <ul class="tags">
-        {tags.map(tag => <li class="tag">{tag}</li>)}
-      </ul>
-    )} -->
 	</div>
 </li>
 
@@ -21,7 +15,7 @@ const { url, title, description, tags } = Astro.props;
 		--padd: 1.5rem;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: 0.25rem;
 
 		@media screen and (max-width: 768px) {
 			--padd: 1rem;

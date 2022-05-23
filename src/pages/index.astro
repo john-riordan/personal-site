@@ -4,6 +4,7 @@ import Twitter from '../components/SVGs/Twitter.astro';
 import Discord from '../components/SVGs/Discord.astro';
 import LinkedIn from '../components/SVGs/LinkedIn.astro';
 import Mail from '../components/SVGs/Mail.astro';
+import Footer from '../components/Footer.astro';
 import { SOCIALS } from '../constants';
 
 import '../styles/global.css'
@@ -67,8 +68,7 @@ const projects = [
 				<span><span class="rio">Rio</span>rdan</span>
 			</h1>
 			<p class="byline">
-				<span>Senior Product Designer/Engineer @ <a href="https://blitz.gg">Blitz.gg</a></span>
-				<a href={SOCIALS.twitter}>@johnriordan</a>
+				<span>Senior Product Designer/Engineer at <a href="https://blitz.gg">TSM/Blitz</a></span>
 			</p>
 			<div class="sections">
 				<section>
@@ -103,6 +103,7 @@ const projects = [
 					</ul>
 				</section>
 			</div>
+			<Footer />
 		</main>
 	</body>
 </html>
