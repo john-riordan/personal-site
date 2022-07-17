@@ -78,6 +78,17 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
 	background: var(--accent);
 }
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+p::selection,
+span::selection,
+a::selection {
+	color: var(--c10);
+	background: var(--accent);
+}
 
 #root,
 canvas {
@@ -167,4 +178,47 @@ li {
 	left: 0;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.page-title {
+	font-size: 4.5rem;
+	text-transform: uppercase;
+	line-height: 1;
+	color: var(--c6);
+}
+.page-title > span {
+	display: block;
+}
+.page-title .underline {
+	position: relative;
+	color: var(--c1);
+}
+.page-title .underline::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 0.25rem;
+	background: var(--accent);
+}
+
+@media screen and (max-width: 768px) {
+	.page-title {
+		font-size: 3.25rem;
+	}
+}
+
+.byline {
+	display: flex;
+	gap: 3ch;
+	color: var(--c3);
+	margin-top: 2.5rem;
+	margin-bottom: 5rem;
+}
+@media screen and (max-width: 768px) {
+	.byline {
+		flex-direction: column;
+		gap: 1rem;
+	}
 }

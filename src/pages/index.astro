@@ -1,5 +1,5 @@
 ---
-import ProjectListItem from '../components/ProjectListItem.astro';
+import ProjectList from '../components/ProjectList.astro';
 import Twitter from '../components/SVGs/Twitter.astro';
 import Discord from '../components/SVGs/Discord.astro';
 import LinkedIn from '../components/SVGs/LinkedIn.astro';
@@ -7,7 +7,7 @@ import Mail from '../components/SVGs/Mail.astro';
 import Footer from '../components/Footer.astro';
 import { SOCIALS } from '../constants';
 
-import '../styles/global.css'
+import '../styles/global.css';
 
 const projects = [
 	{
@@ -15,7 +15,7 @@ const projects = [
 		title: 'RuneForge',
 		description: `An educational web-app with the goal of helping to ease players into the 
 		massive League of Legends <a href="https://na.leagueoflegends.com/en/featured/preseason-update">Season 8 pre-season" 
-		Runes Reforged"</a> update.`,
+		Runes Reforged"</a> update.`
 	},
 	{
 		url: 'https://lolshop.gg',
@@ -41,8 +41,7 @@ const projects = [
 		UX experience for the NA Champions Queue competitive ladder. The <a href="https://championsqueue.lolesports.com/en-us/">official site</a>
 		 just wasn't cutting it so I wanted to see how far I could push the limits of UX using the exact same data the offial site uses.`,
 		tags: ['Svelte', 'SPA', 'League of Legends']
-	},
-	
+	}
 ];
 ---
 
@@ -63,9 +62,9 @@ const projects = [
 	</head>
 	<body>
 		<main>
-			<h1 class="title">
+			<h1 class="page-title">
 				<span>John</span>
-				<span><span class="rio">Rio</span>rdan</span>
+				<span><span class="underline">Rio</span>rdan</span>
 			</h1>
 			<p class="byline">
 				<span>Senior Product Designer/Engineer at <a href="https://blitz.gg">TSM/Blitz</a></span>
@@ -73,20 +72,24 @@ const projects = [
 			<div class="sections">
 				<section>
 					<h2 class="section-title">About</h2>
-					<p>Gamer nerd 🤓 with a (potentially?) unhealthly obsession with educating and solving problems for other gamers. Most call me Rio.</p>
+					<p>
+						Gamer nerd 🤓 with a (potentially?) unhealthly obsession with educating and solving
+						problems for other gamers. Most call me Rio.
+					</p>
 				</section>
 				<section>
 					<h2 class="section-title">Projects</h2>
-					<p>A few of the personal/passion projects (among many) that I’ve desgined and built over the last few years. 🚀</p>
-					<ul class="projects">
-						{projects.map(p => (
-							<ProjectListItem {...p} />
-						))}
-					</ul>
+					<p>
+						A few of the personal/passion projects (among many) that I’ve desgined and built over
+						the last few years. 🚀
+					</p>
+					<ProjectList {projects} />
 				</section>
 				<section>
 					<h2 class="section-title">Contact</h2>
-					<p>I'm "incredibly online" so there are a number of ways to reach me. Pick your poison. 🧪</p>
+					<p>
+						I'm "incredibly online" so there are a number of ways to reach me. Pick your poison. 🧪
+					</p>
 					<ul class="contact-list">
 						<li class="list-item-title">
 							<Twitter /><a href={SOCIALS.twitter}>@johnriordan</a>
@@ -98,7 +101,9 @@ const projects = [
 							<LinkedIn /><a href={SOCIALS.linkedin}>LinkedIn</a>
 						</li>
 						<li class="list-item-title">
-							<Mail /><a href={`mailto:${SOCIALS.email}?subject=Yo Rio, HUGE fan 🙌`}>iam.john.riordan@gmail.com</a>
+							<Mail /><a href={`mailto:${SOCIALS.email}?subject=Yo Rio, HUGE fan 🙌`}
+								>iam.john.riordan@gmail.com</a
+							>
 						</li>
 					</ul>
 				</section>
@@ -109,49 +114,6 @@ const projects = [
 </html>
 
 <style lang="scss">
-	.title {
-		font-size: 4.5rem;
-		text-transform: uppercase;
-		line-height: 1;
-		color: var(--c6);
-
-		@media screen and (max-width: 768px) {
-			font-size: 3.25rem;
-		}
-
-		> span {
-			display: block;
-		}
-
-		.rio {
-			position: relative;
-			color: var(--c1);
-
-			&::after {
-				content: '';
-				position: absolute;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				height: 0.25rem;
-				background: var(--accent);
-			}
-		}
-	}
-
-	.byline {
-		display: flex;
-		gap: 3ch;
-		color: var(--c3);
-		margin-top: 2.5rem;
-		margin-bottom: 5rem;
-
-		@media screen and (max-width: 768px) {
-			flex-direction: column;
-			gap: 1rem;
-		}
-	}
-
 	.sections {
 		display: flex;
 		flex-direction: column;
@@ -183,20 +145,10 @@ const projects = [
 		}
 	}
 
-	.projects {
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		padding-top: 1rem;
-	}
-
 	.contact-list {
 		display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+		flex-direction: column;
+		gap: 0.5rem;
 
 		li {
 			display: flex;

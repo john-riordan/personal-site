@@ -1,0 +1,23 @@
+---
+import ProjectListItem from './ProjectListItem.astro';
+
+const { projects } = Astro.props;
+---
+
+<ul class="project-list">
+  {projects.map(p => (
+    <ProjectListItem {...p} />
+  ))}
+</ul>
+
+<style>
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 1rem;
+  }
+</style>

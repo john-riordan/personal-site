@@ -1,0 +1,44 @@
+---
+import ProjectList from '../components/ProjectList.astro';
+import '../styles/global.css';
+
+const projects = [
+	{
+		url: 'https://xhair.vercel.app',
+		title: 'xHair',
+		description: `Web-based crosshair customization tool for Valorant, designed specifically to empower sharability`
+	}
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Misc. - John Riordan</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,900&family=Source+Code+Pro:ital@0;1&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	</head>
+	<body>
+		<main>
+			<h1 class="page-title">
+				<span>Misc.</span>
+				<span><span class="underline">stuff</span></span>
+			</h1>
+			<p class="byline">
+				<span>
+					Random little weekend projects with minimal thought/effort, mostly as a means to learn and
+					explore ideas.
+				</span>
+			</p>
+			<ProjectList {projects} />
+		</main>
+	</body>
+</html>
