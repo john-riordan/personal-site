@@ -16,13 +16,13 @@
 		"react-dom": "^18.1.0"
 	},
 	"dependencies": {
-		"react": "^18.1.0",
-		"react-dom": "^18.1.0",
 		"@react-three/drei": "^9.11.0",
 		"@react-three/fiber": "^8.0.17",
 		"@splinetool/loader": "^0.9.53",
 		"@splinetool/r3f-spline": "^1.0.1",
 		"prettier": "^2.6.2",
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0",
 		"sass": "^1.51.0",
 		"three": "^0.140.2"
 	}
