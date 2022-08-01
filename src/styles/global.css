@@ -119,8 +119,6 @@ main {
 	padding: 11vw;
 	padding-bottom: 6vw;
 	max-width: 60ch;
-	-webkit-mask-image: url(grain.jpg);
-	-webkit-mask-repeat: repeat;
 }
 
 h1,
