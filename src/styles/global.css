@@ -62,6 +62,20 @@ body {
 	color: var(--c1);
 	overflow-x: hidden;
 }
+body::before {
+	content: '';
+	display: block;
+	position: absolute;
+	background-image: url(/grain.jpg);
+	background-repeat: repeat;
+	background-size: 100% auto;
+	width: 100%;
+	height: 100%;
+	opacity: 0.15;
+}
+body > * {
+	position: relative;
+}
 
 @media screen and (min-width: 1920px) {
 	body {
@@ -105,6 +119,8 @@ main {
 	padding: 11vw;
 	padding-bottom: 6vw;
 	max-width: 60ch;
+	-webkit-mask-image: url(grain.jpg);
+	-webkit-mask-repeat: repeat;
 }
 
 h1,
