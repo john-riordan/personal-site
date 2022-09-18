@@ -4,6 +4,7 @@ import Twitter from '../components/SVGs/Twitter.astro';
 import Discord from '../components/SVGs/Discord.astro';
 import LinkedIn from '../components/SVGs/LinkedIn.astro';
 import Mail from '../components/SVGs/Mail.astro';
+import Github from '../components/SVGs/Github.astro';
 import Footer from '../components/Footer.astro';
 import { SOCIALS } from '../constants';
 
@@ -102,18 +103,23 @@ const projects = [
 					</p>
 					<ul class="contact-list">
 						<li class="list-item-title">
-							<Twitter /><a href={SOCIALS.twitter}>@johnriordan</a>
+							<Twitter />
+							<a href={SOCIALS.twitter}>@johnriordan</a>
 						</li>
 						<li class="list-item-title">
 							<Discord />Rio#2678
 						</li>
 						<li class="list-item-title">
-							<LinkedIn /><a href={SOCIALS.linkedin}>LinkedIn</a>
+							<LinkedIn />
+							<a href={SOCIALS.linkedin}>LinkedIn</a>
 						</li>
 						<li class="list-item-title">
-							<Mail /><a href={`mailto:${SOCIALS.email}?subject=Yo Rio, HUGE fan 🙌`}
-								>iam.john.riordan@gmail.com</a
-							>
+							<Mail />
+							<a href={SOCIALS.emailWithSubject}>iam.john.riordan@gmail.com</a>
+						</li>
+						<li class="list-item-title">
+							<Github />
+							<a href={SOCIALS.github}>john-riordan</a>
 						</li>
 					</ul>
 				</section>

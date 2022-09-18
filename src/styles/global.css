@@ -140,11 +140,15 @@ h5 {
 		--c3-hsl: 220deg 7% 20%;
 		--c4-hsl: 220deg 7% 25%;
 		--c5-hsl: 220deg 7% 30%;
-		--c6-hsl: 220deg 7% 35%;
-		--c7-hsl: 220deg 7% 45%;
-		--c8-hsl: 220deg 7% 60%;
-		--c9-hsl: 220deg 7% 70%;
-		--c10-hsl: 220deg 7% 90%;
+		--c6-hsl: 220deg 7% 45%;
+		--c7-hsl: 220deg 7% 55%;
+		--c8-hsl: 220deg 7% 80%;
+		--c9-hsl: 220deg 7% 90%;
+		--c10-hsl: 220deg 7% 95%;
+		--accent-hsl: var(--accent-h) 100% 45%;
+	}
+	body::before {
+		content: unset;
 	}
 }
 
