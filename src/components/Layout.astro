@@ -1,0 +1,28 @@
+---
+import Footer from './Footer.astro';
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,900&family=Source+Code+Pro:ital@0;1&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	</head>
+	<body>
+		<main>
+			<slot />
+			<Footer />
+		</main>
+	</body>
+</html>

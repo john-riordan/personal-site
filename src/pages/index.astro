@@ -5,7 +5,7 @@ import Discord from '../components/SVGs/Discord.astro';
 import LinkedIn from '../components/SVGs/LinkedIn.astro';
 import Mail from '../components/SVGs/Mail.astro';
 import Github from '../components/SVGs/Github.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../components/Layout.astro';
 import { SOCIALS } from '../constants';
 
 import '../styles/global.css';
@@ -46,88 +46,67 @@ const projects = [
 ];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>John Riordan</title>
-
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@1,900&family=Source+Code+Pro:ital@0;1&display=swap"
-			rel="stylesheet"
-		/>
-
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	</head>
-	<body>
-		<main>
-			<h1 class="page-title">
-				<span>John</span>
-				<span><span class="underline">Rio</span>rdan</span>
-			</h1>
-			<p class="byline">
-				<span>Senior Product Designer/Engineer at <a href="https://blitz.gg">TSM/Blitz</a></span>
+<Layout title="John Riordan">
+	<h1 class="page-title">
+		<span>John</span>
+		<span><span class="underline">Rio</span>rdan</span>
+	</h1>
+	<p class="byline">
+		<span>Senior Product Designer/Engineer at <a href="https://blitz.gg">TSM/Blitz</a></span>
+	</p>
+	<div class="sections">
+		<section>
+			<h2 class="section-title">About</h2>
+			<p>
+				Gamer nerd 🤓 with a (potentially?) unhealthly obsession with educating and solving problems
+				for other gamers. Most call me Rio.
 			</p>
-			<div class="sections">
-				<section>
-					<h2 class="section-title">About</h2>
-					<p>
-						Gamer nerd 🤓 with a (potentially?) unhealthly obsession with educating and solving
-						problems for other gamers. Most call me Rio.
-					</p>
-				</section>
-				<section>
-					<h2 class="section-title">Projects</h2>
-					<p>
-						A few of the personal/passion projects (among many) that I’ve desgined and built over
-						the last few years. 🚀
-					</p>
-					<ProjectList {projects} />
-				</section>
-				<section>
-					<h2 class="section-title">Misc.</h2>
-					<p>
-						In my free time I like to explore my passion with
-						<a href="/misc"><strong>miscellaneous side projects.</strong></a>
-						These projects are important to me in a lot of ways but mainly because they're an opportunity
-						for me to learn. Often times these side projects lead to much bigger things and I owe a *lot*
-						of my career growth to this kind of exploration.
-					</p>
-				</section>
-				<section>
-					<h2 class="section-title">Contact</h2>
-					<p>
-						I'm "incredibly online" so there are a number of ways to reach me. Pick your poison. 🧪
-					</p>
-					<ul class="contact-list">
-						<li class="list-item-title">
-							<Twitter />
-							<a href={SOCIALS.twitter}>@johnriordan</a>
-						</li>
-						<li class="list-item-title">
-							<Discord />Rio#2678
-						</li>
-						<li class="list-item-title">
-							<LinkedIn />
-							<a href={SOCIALS.linkedin}>LinkedIn</a>
-						</li>
-						<li class="list-item-title">
-							<Mail />
-							<a href={SOCIALS.emailWithSubject}>iam.john.riordan@gmail.com</a>
-						</li>
-						<li class="list-item-title">
-							<Github />
-							<a href={SOCIALS.github}>john-riordan</a>
-						</li>
-					</ul>
-				</section>
-			</div>
-			<Footer />
-		</main>
-	</body>
-</html>
+		</section>
+		<section>
+			<h2 class="section-title">Projects</h2>
+			<p>
+				A few of the personal/passion projects (among many) that I’ve desgined and built over the
+				last few years. 🚀
+			</p>
+			<ProjectList {projects} />
+		</section>
+		<section>
+			<h2 class="section-title">Misc.</h2>
+			<p>
+				In my free time I like to explore my passion with
+				<a href="/misc"><strong>miscellaneous side projects.</strong></a>
+				These projects are important to me in a lot of ways but mainly because they're an opportunity
+				for me to learn. Often times these side projects lead to much bigger things and I owe a *lot*
+				of my career growth to this kind of exploration.
+			</p>
+		</section>
+		<section>
+			<h2 class="section-title">Contact</h2>
+			<p>I'm "incredibly online" so there are a number of ways to reach me. Pick your poison. 🧪</p>
+			<ul class="contact-list">
+				<li class="list-item-title">
+					<Twitter />
+					<a href={SOCIALS.twitter}>@johnriordan</a>
+				</li>
+				<li class="list-item-title">
+					<Discord />Rio#2678
+				</li>
+				<li class="list-item-title">
+					<LinkedIn />
+					<a href={SOCIALS.linkedin}>LinkedIn</a>
+				</li>
+				<li class="list-item-title">
+					<Mail />
+					<a href={SOCIALS.emailWithSubject}>iam.john.riordan@gmail.com</a>
+				</li>
+				<li class="list-item-title">
+					<Github />
+					<a href={SOCIALS.github}>john-riordan</a>
+				</li>
+			</ul>
+		</section>
+	</div>
+</Layout>
 
 <style lang="scss">
 	.sections {
