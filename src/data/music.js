@@ -18,15 +18,21 @@ export default [
 				id: '4wM1e6S2jJrvxdK5qIYj5q',
 				name: 'Jetpacks',
 				artist: 'Von Kaiser',
-				notes:
-					'Big shocker a synthwave song. The little guitar riff during the hook sounds an answer lot like riff from Sunset by The Midnight (on of my favorite bans). This is what I call driving music. I can totally jam out and belt to this.'
+				notes: `
+					Big shocker a synthwave song 😅. The little guitar riff during the hook 
+					sounds an anful lot like riff from <a href="https://open.spotify.com/track/4PMmwowVLOajPdiKnrU1vK?si=9295301e20594854">Sunset</a> 
+					by The Midnight (one of my favorite bands). 
+					This is what I call driving music. I can totally jam out and belt to this.
+				`
 			},
 			{
 				id: '53gVj6cwOhDqbjufY30J7c',
 				name: 'Liberty of Broken Bindings',
 				artist: 'Sincere Engineer',
-				notes:
-					"Sincere Engineer's sound reminds me a lot of one of my favorites, Phoebe Bridgers. So naturally this was an instant hit for me."
+				notes: `
+					Sincere Engineer's sound reminds me a bit of one of my favorites 
+					<a href="https://open.spotify.com/artist/1r1uxoy19fzMxunt3ONAkG?si=5e24169818d94b5d">Phoebe Bridgers.</a> 
+					So naturally this was an instant hit for me.`
 			},
 			{
 				id: '5UqTWnG7YZAbj1SYMvnGsU',
@@ -38,7 +44,12 @@ export default [
 				id: '10yYDp1Lnac8zEIYiCk1sp',
 				name: 'Wish on an Eyelash, Pt. 2',
 				artist: 'Mallrat, The Chainsmokers',
-				notes: ''
+				notes: `
+					I'm not particularly a Chainsmokers fan, but I am 
+					indeed a Mallrat fan and I just recently stumbled upon 
+					<a href="https://open.spotify.com/track/3vLByi1CdmNJPpTtOdKqAQ?si=1207724d9e9e4c38"> the song this is based on</a> 
+					(the first 40s of this) and  this is a fun little extension of it.
+				`
 			}
 		]
 	}
