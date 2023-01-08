@@ -1,0 +1,49 @@
+---
+import Layout from '../../components/Layout.astro';
+import MusicPost from '../../components/MusicPost.astro';
+import List from '../../components/List.astro';
+import MUSIC from '../../data/music';
+
+import '../../styles/global.css';
+
+const latest = MUSIC[0];
+const previous = MUSIC.filter((_, i) => i !== 0).map((post) => {
+	return {
+		title: `Week ${post.week}`,
+		url: `/music/${post.slug}`,
+		postedDate: post.date
+	};
+});
+---
+
+<Layout title="Music '23 - John Riordan">
+	<div class="container">
+		<MusicPost post={latest} />
+		<div>
+      {previous.length ? (
+        <h2 class="section-title">Previous weeks</h2>
+        <List items={previous} />
+      ) : null}
+		</div>
+	</div>
+</Layout>
+
+<style lang="scss">
+	.container {
+		display: grid;
+		gap: 6rem;
+	}
+	.list {
+		display: grid;
+		gap: 4em;
+		padding: 0;
+	}
+	.favs {
+		display: grid;
+		gap: 1rem;
+	}
+	.notes {
+		color: var(--c5);
+		font-size: 0.875em;
+	}
+</style>

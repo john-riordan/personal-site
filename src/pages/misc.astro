@@ -1,15 +1,9 @@
 ---
 import Layout from '../components/Layout.astro';
-import ProjectList from '../components/ProjectList.astro';
-import '../styles/global.css';
+import List from '../components/List.astro';
+import PROJECTS from '../data/misc';
 
-const projects = [
-	{
-		url: 'https://xhair.vercel.app',
-		title: 'xHair',
-		description: `Web-based crosshair customization tool for Valorant, designed specifically to empower sharability`
-	}
-];
+import '../styles/global.css';
 ---
 
 <Layout title="Misc. Projects - John Riordan">
@@ -23,5 +17,5 @@ const projects = [
 			explore ideas.
 		</span>
 	</p>
-	<ProjectList {projects} />
+	<List items={PROJECTS} />
 </Layout>
