@@ -105,6 +105,10 @@ a::selection {
 	background: var(--accent);
 }
 
+img {
+	display: block;
+}
+
 #root,
 canvas {
 	position: fixed;
@@ -112,14 +116,6 @@ canvas {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-}
-
-main {
-	box-sizing: content-box;
-	position: relative;
-	padding: 11vw;
-	padding-bottom: 6vw;
-	max-width: 60ch;
 }
 
 h1,
@@ -216,9 +212,8 @@ li {
 }
 
 .sections {
-	display: flex;
-	flex-direction: column;
-	gap: 4.5rem;
+	display: grid;
+	gap: 5rem;
 	max-width: 100%;
 }
 .sections section {
@@ -236,9 +231,6 @@ li {
 	ul,
 	li {
 		--padd: 1rem;
-	}
-	main {
-		padding: 12vw 10vw;
 	}
 	.page-title {
 		font-size: 3.25rem;

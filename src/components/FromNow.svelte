@@ -1,6 +1,4 @@
 <script>
-  // import relativeTime from '@yaireo/relative-time'
-
   const UNITS = {
     year  : 24 * 60 * 60 * 1000 * 365,
     month : 24 * 60 * 60 * 1000 * 365/12,

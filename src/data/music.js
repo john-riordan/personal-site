@@ -3,9 +3,9 @@ export default [
 		slug: 'week-1',
 		week: 1,
 		month: 'Jan',
-		date: new Date('January 4, 2023 00:00:00'),
+		date: new Date('January 6, 2023 00:00:00'),
 		dw: '3nboe40m3nAxKVm5nCXSql',
-		rr: '37i9dQZEVXbqV4aHeE2CpU',
+		rr: '351nTThZ1Lcq2pdP5RVPwm',
 		aboutFavs: `
 			Most of the music I listen to these days is whatever I get from my
 			<a href="#dw">Discover Weekly</a> and <a href="#rr">Release Radar</a>. Here are some of the
@@ -20,9 +20,18 @@ export default [
 				artist: 'Von Kaiser',
 				notes: `
 					Big shocker a synthwave song 😅. The little guitar riff during the hook 
-					sounds an anful lot like riff from <a href="https://open.spotify.com/track/4PMmwowVLOajPdiKnrU1vK?si=9295301e20594854">Sunset</a> 
+					sounds an awful lot like riff from <a href="https://open.spotify.com/track/4PMmwowVLOajPdiKnrU1vK?si=9295301e20594854">Sunset</a> 
 					by The Midnight (one of my favorite bands). 
 					This is what I call driving music. I can totally jam out and belt to this.
+				`
+			},
+			{
+				id: '6ZbE8insnDOqnawvzZ3I7R',
+				name: 'Sky Fleur',
+				artist: 'Late June',
+				notes: `
+					I've never heard of Late June before this calming, rhythmic, instrumental tone is exactly the
+					type of music I like to work to.
 				`
 			},
 			{
@@ -31,7 +40,7 @@ export default [
 				artist: 'Sincere Engineer',
 				notes: `
 					Sincere Engineer's sound reminds me a bit of one of my favorites 
-					<a href="https://open.spotify.com/artist/1r1uxoy19fzMxunt3ONAkG?si=5e24169818d94b5d">Phoebe Bridgers.</a> 
+					<a href="https://open.spotify.com/artist/1r1uxoy19fzMxunt3ONAkG?si=5e24169818d94b5d">Phoebe Bridgers 🎶.</a> 
 					So naturally this was an instant hit for me.`
 			},
 			{
