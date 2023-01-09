@@ -105,6 +105,10 @@ a::selection {
 	background: var(--accent);
 }
 
+img {
+	display: block;
+}
+
 #root,
 canvas {
 	position: fixed;
@@ -112,14 +116,6 @@ canvas {
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-}
-
-main {
-	box-sizing: content-box;
-	position: relative;
-	padding: 11vw;
-	padding-bottom: 6vw;
-	max-width: 60ch;
 }
 
 h1,
@@ -168,6 +164,10 @@ svg {
 	height: 1em;
 }
 
+iframe {
+	border: none;
+}
+
 ul,
 li {
 	--padd: 1.5rem;
@@ -175,28 +175,9 @@ li {
 	margin: 0;
 	padding: 0;
 }
-@media screen and (max-width: 768px) {
-	ul,
-	li {
-		--padd: 1rem;
-	}
-}
+
 li {
 	position: relative;
-}
-.list-item-title {
-	position: relative;
-	padding-left: var(--padd);
-}
-.list-item-title::before {
-	content: '';
-	position: absolute;
-	height: 0.25rem;
-	width: 0.25rem;
-	background: var(--accent);
-	left: 0;
-	top: 50%;
-	transform: translateY(-50%);
 }
 
 .page-title {
@@ -222,22 +203,52 @@ li {
 	background: var(--accent);
 }
 
-@media screen and (max-width: 768px) {
-	.page-title {
-		font-size: 3.25rem;
-	}
-}
-
 .byline {
 	display: flex;
 	gap: 3ch;
 	color: var(--c3);
-	margin-top: 2.5rem;
-	margin-bottom: 5rem;
+	margin-block-start: 2.5rem;
+	margin-block-end: 4rem;
 }
+
+.sections {
+	display: grid;
+	gap: 5rem;
+	max-width: 100%;
+}
+.sections section {
+	display: grid;
+	gap: 1rem;
+}
+.sections .section-title {
+	font-size: 2.75rem;
+	line-height: 1;
+	color: var(--c8);
+	transform: translateX(-2vw);
+}
+
 @media screen and (max-width: 768px) {
+	ul,
+	li {
+		--padd: 1rem;
+	}
+	.page-title {
+		font-size: 3.25rem;
+	}
 	.byline {
 		flex-direction: column;
 		gap: 1rem;
+		margin-block-start: 1.5rem;
+		margin-block-end: 2.5rem;
+	}
+	.sections {
+		gap: 2.75rem;
+	}
+	.sections section {
+		gap: 0.5rem;
+	}
+	.sections .section-title {
+		font-size: 2rem;
+		transform: translateX(-3vw);
 	}
 }

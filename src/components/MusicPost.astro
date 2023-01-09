@@ -1,0 +1,123 @@
+---
+import List from './List.astro';
+import FromNow from './FromNow.svelte';
+
+import '../styles/global.css';
+
+const playlistEmbed = (playlistId) =>
+	`https://open.spotify.com/embed/playlist/${playlistId}?utm_source=generator&theme=0`;
+const playlistLink = (playlistId) =>
+	`https://open.spotify.com/playlist/${playlistId}?si=2e05d34bd7fa405d`;
+const songEmbed = (songId) =>
+	`https://open.spotify.com/embed/track/${songId}?utm_source=generator&theme=0"`;
+const songLink = (songId) => `https://open.spotify.com/track/${songId}?si=4b4d83c9031a449d`;
+
+const { post } = Astro.props;
+const favs = post?.favs.map((fav) => {
+	return {
+		title: `${fav.name} - ${fav.artist}`,
+		url: songLink(fav.id),
+		external: true,
+		description: fav.notes,
+		miscHTML: `
+      <iframe src="${songEmbed(
+				fav.id
+			)}" width="100%" height="80"  allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    `
+	};
+});
+---
+
+<div class="latest">
+	<h1 class="page-title">
+		<span>{post.month} '23 </span>
+		<span><span class="underline">Week {post.week}</span></span>
+	</h1>
+	<span class="byline">Posted <FromNow date={post.date} client:load /></span>
+	<div class="sections">
+		<section>
+			<h4 class="section-title">Standout songs</h4>
+      {post.aboutFavs ? (
+        <p set:html={post.aboutFavs} />
+      ) : (
+        <p>
+          Most of the music I listen to these days is whatever I get from my
+          <a href="#dw">Discover Weekly</a> and <a href="#rr">Release Radar</a>. Here are some of the
+          ones that stood out this week.
+        </p>
+      )}
+			<List items={favs} />
+		</section>
+		<section id="dw">
+			<h4 class="section-title">Discover Weekly</h4>
+			<p>
+				This weeks Discovery Weekly. <a href={playlistLink(post.dw)} target="_blank">Spotify Link</a
+				>
+			</p>
+			<iframe
+				src={playlistEmbed(post.dw)}
+				width="100%"
+				height="360"
+				allowfullscreen=""
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			>
+			</iframe>
+		</section>
+		
+		<section id="rr">
+			<h4 class="section-title">Release Radar</h4>
+			<p>
+				This weeks Release Radar. <a href={playlistLink(post.rr)} target="_blank">Spotify Link</a>
+			</p>
+			<iframe
+				src={playlistEmbed(post.rr)}
+				width="100%"
+				height="360"
+				allowfullscreen=""
+				allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+				loading="lazy"
+			>
+			</iframe>
+		</section>
+		<hr />
+	</div>
+</div>
+
+<style lang="scss">
+	.container {
+		display: grid;
+		gap: 6rem;
+	}
+
+	.section-title {
+		font-size: 2.5rem;
+		color: var(--c8);
+		transform: translateX(-2vw);
+
+		@media screen and (max-width: 768px) {
+			font-size: 2rem;
+			transform: translateX(-3vw);
+		}
+
+		&.sm {
+			font-size: 2rem;
+
+			@media screen and (max-width: 768px) {
+				font-size: 1.5rem;
+				transform: translateX(-3vw);
+			}
+		}
+	}
+	.favs {
+		display: grid;
+		gap: 1rem;
+	}
+
+	hr {
+		width: 100%;
+		height: 1px;
+		background: var(--c9);
+		border: none;
+	}
+</style>

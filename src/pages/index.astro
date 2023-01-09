@@ -1,49 +1,15 @@
 ---
-import ProjectList from '../components/ProjectList.astro';
 import Twitter from '../components/SVGs/Twitter.astro';
 import Discord from '../components/SVGs/Discord.astro';
 import LinkedIn from '../components/SVGs/LinkedIn.astro';
 import Mail from '../components/SVGs/Mail.astro';
 import Github from '../components/SVGs/Github.astro';
 import Layout from '../components/Layout.astro';
+import List from '../components/List.astro';
 import { SOCIALS } from '../constants';
+import PROJECTS from '../data/projects';
 
 import '../styles/global.css';
-
-const projects = [
-	{
-		url: 'https://runeforge.gg',
-		title: 'RuneForge',
-		description: `An educational web-app with the goal of helping to ease players into the 
-		massive League of Legends <a href="https://na.leagueoflegends.com/en/featured/preseason-update">Season 8 pre-season" 
-		Runes Reforged"</a> update.`
-	},
-	{
-		url: 'https://lolshop.gg',
-		title: 'LoL Shop',
-		description: `Like my other project RuneForge, Lol Shop was designed as an educational tool to introduce 
-		and guide players into the comprehensieve 
-		<a href="https://www.leagueoflegends.com/en-pl/news/dev/preseason-2021-mythic-legendary-items-preview/">LoL item overhaul</a>. 
-		Starting to see a bit of a pattern? 😉`,
-		tags: ['React', 'SPA', 'League of Legends']
-	},
-	{
-		url: 'https://worldforge.gg',
-		title: 'World Forge',
-		description: `Turns out I'm a massive MMO nerd 🔮. My MMO roots go way back. When <a href="https://www.newworld.com/en-us/">New World</a> was announced,
-		I couldn't help myself but to dip my toe into exploring opportunities to apply my UX problem solving skills
-		to the unique game design problems of the game.`,
-		tags: ['Svelte', 'SPA', 'New World']
-	},
-	{
-		url: 'https://championsqueue.gg',
-		title: 'ChampionsQueue.gg',
-		description: `My latest joint for the League of Legends community 🎮. Focused around providing the best possible
-		UX experience for the NA Champions Queue competitive ladder. The <a href="https://championsqueue.lolesports.com/en-us/">official site</a>
-		 just wasn't cutting it so I wanted to see how far I could push the limits of UX using the exact same data the offial site uses.`,
-		tags: ['Svelte', 'SPA', 'League of Legends']
-	}
-];
 ---
 
 <Layout title="John Riordan">
@@ -68,7 +34,7 @@ const projects = [
 				A few of the personal/passion projects (among many) that I’ve desgined and built over the
 				last few years. 🚀
 			</p>
-			<ProjectList {projects} />
+			<List items={PROJECTS} />
 		</section>
 		<section>
 			<h2 class="section-title">Misc.</h2>
@@ -78,6 +44,25 @@ const projects = [
 				These projects are important to me in a lot of ways but mainly because they're an opportunity
 				for me to learn. Often times these side projects lead to much bigger things and I owe a *lot*
 				of my career growth to this kind of exploration.
+			</p>
+		</section>
+		<section>
+			<h2 class="section-title">Music 2023</h2>
+			<strong><a href="/music">Follow along 😊🎶🎵🎼</a></strong>
+			<p>
+				One of my favorite feelings is driving home from work, turning on my Discover Weekly, and
+				stumbling on to an instant hit that defines my mood at that moment. I have this theory that
+				you can instnatly tell how good a week is going to be based on the number of those in that
+				week's playlist.
+			</p>
+			<p>
+				This year I've decided to take a stab at <a href="/music">documenting some of these gems</a>
+				that strike me week by week. Who knows maybe I'll give up on it at some point but having them
+				in preverbial stone will be a nice way to look back and find them again. Who knows maybe I'll
+				do one for movies this year as well (much more attainable).
+			</p>
+			<p>
+				<strong><a href="/music">My 2023 music discovery</a></strong>
 			</p>
 		</section>
 		<section>
@@ -109,37 +94,6 @@ const projects = [
 </Layout>
 
 <style lang="scss">
-	.sections {
-		display: flex;
-		flex-direction: column;
-		gap: 5rem;
-		max-width: 100%;
-
-		@media screen and (max-width: 768px) {
-			gap: 3rem;
-		}
-	}
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 1rem;
-
-		@media screen and (max-width: 768px) {
-			gap: 0.75rem;
-		}
-	}
-	.section-title {
-		font-size: 2.75rem;
-		line-height: 1;
-		color: var(--c8);
-		transform: translateX(-2vw);
-
-		@media screen and (max-width: 768px) {
-			font-size: 2rem;
-			transform: translateX(-3vw);
-		}
-	}
-
 	.contact-list {
 		display: flex;
 		flex-direction: column;

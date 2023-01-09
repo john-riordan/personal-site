@@ -1,0 +1,54 @@
+<header>
+	<a href="/">
+		<img src="/me.webp" alt="John Riordan" loading="lazy" width="80" height="80" />
+	</a>
+</header>
+
+<style lang="scss">
+	a {
+		position: relative;
+		display: inline-block;
+
+		&:hover {
+			&::after {
+				opacity: 0.3;
+			}
+		}
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			background: var(--accent);
+		}
+		&::before {
+			top: -2px;
+			left: -2px;
+			width: 6px;
+			height: 6px;
+			box-shadow: 0 0 0 3px var(--c10);
+			z-index: 1;
+			transition: height 0.175s ease-in-out;
+		}
+		&::after {
+			inset: 0;
+			background-color: var(--accent);
+			mix-blend-mode: color;
+			opacity: 0;
+			transition: opacity 0.175s ease-in-out;
+			pointer-events: none;
+		}
+	}
+	img {
+		filter: contrast(1.05);
+
+		@media screen and (max-width: 768px) {
+			width: 62px;
+			height: 62px;
+		}
+		@media screen and (max-width: 500px) {
+			width: 62px;
+			height: 62px;
+		}
+	}
+</style>
