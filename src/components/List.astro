@@ -15,14 +15,17 @@ const { items } = Astro.props;
       <div class="content">
         {item.postedDate && (
           <span class="description">
-            Posted <FromNow date={item.postedDate} client:visible />
+            {item.postedPrefix || "Posted"} <FromNow date={item.postedDate} client:visible />
           </span>
+        )}
+        {item.beforeHTML && (
+          <div class="misc before" set:html={item.beforeHTML} />
         )}
         {item.description && (
           <p class="description" set:html={item.description}></p>
         )}
-        {item.miscHTML && (
-          <div class="misc" set:html={item.miscHTML} />
+        {item.afterHTML && (
+          <div class="misc after" set:html={item.afterHTML} />
         )}
       </div>
     </li>

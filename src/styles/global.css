@@ -158,6 +158,15 @@ a:hover {
 	color: var(--accent);
 }
 
+hr {
+	display: block;
+	width: 100%;
+	margin-block: 2rem;
+	height: 1px;
+	background: var(--c9);
+	border: none;
+}
+
 svg {
 	display: block;
 	width: 1em;
@@ -165,6 +174,7 @@ svg {
 }
 
 iframe {
+	display: block;
 	border: none;
 }
 

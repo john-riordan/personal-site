@@ -19,7 +19,7 @@ const favs = post?.favs.map((fav) => {
 		url: songLink(fav.id),
 		external: true,
 		description: fav.notes,
-		miscHTML: `
+		afterHTML: `
       <iframe src="${songEmbed(
 				fav.id
 			)}" width="100%" height="80"  allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
@@ -64,7 +64,6 @@ const favs = post?.favs.map((fav) => {
 			>
 			</iframe>
 		</section>
-		
 		<section id="rr">
 			<h4 class="section-title">Release Radar</h4>
 			<p>
@@ -112,12 +111,5 @@ const favs = post?.favs.map((fav) => {
 	.favs {
 		display: grid;
 		gap: 1rem;
-	}
-
-	hr {
-		width: 100%;
-		height: 1px;
-		background: var(--c9);
-		border: none;
 	}
 </style>
