@@ -8,9 +8,9 @@ import '../../styles/global.css';
 
 ---
 
-<Layout title="Music '23 - John Riordan">
+<Layout title="Movies & TV '23 - John Riordan">
 	<h1 class="page-title">
-		<span>2013</span>
+		<span>2023 TV &</span>
 		<span><span class="underline">Movies</span></span>
 	</h1>
 	<span class="byline">Updated <FromNow date={MOVIES[0].date} client:load /></span>
@@ -38,6 +38,7 @@ import '../../styles/global.css';
 							title={movie.title}
 							watchedDate={movie.date}
 							trailer={movie.youtube}
+							rating={movie.rating}
 							description={movie.description}
 						/>
 					))}

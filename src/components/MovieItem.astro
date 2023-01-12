@@ -2,8 +2,9 @@
 import ShareIcon from './SVGs/ShareIcon.astro';
 import FromNow from './FromNow.svelte';
 
-const { url, external, title, watchedDate, trailer, description } = Astro.props;
+const { url, external, title, watchedDate, trailer, description, rating } = Astro.props;
 const trailerEmbed = trailer && `https://www.youtube.com/embed/${trailer}`
+const stars = new Array(5).fill(0).map((_, i) => i + 1);
 ---
 
 <li class="list-item">
@@ -16,6 +17,11 @@ const trailerEmbed = trailer && `https://www.youtube.com/embed/${trailer}`
     <span class="description">
       Watched <FromNow date={watchedDate} client:visible />
     </span>
+    <div class="stars">
+      {stars.map((star) => (
+        <div class:list={['star', { filled: rating >= star }]} />
+      ))}
+    </div>
     {trailerEmbed && (
       <div>
         <iframe
@@ -33,4 +39,18 @@ const trailerEmbed = trailer && `https://www.youtube.com/embed/${trailer}`
 </li>
 
 <style lang="scss">
+  .stars {
+    display: flex;
+    gap: 0.25rem;
+
+    .star {
+      --fill: var(--c7);
+      width: 0.5rem;
+      height: 0.5rem;
+      background: var(--fill); 
+    }
+    .filled {
+      --fill: var(--accent); 
+    }
+  }
 </style>
