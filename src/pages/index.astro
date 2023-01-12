@@ -5,7 +5,7 @@ import LinkedIn from '../components/SVGs/LinkedIn.astro';
 import Mail from '../components/SVGs/Mail.astro';
 import Github from '../components/SVGs/Github.astro';
 import Layout from '../components/Layout.astro';
-import List from '../components/List.astro';
+import ShareIcon from '../components/SVGs/ShareIcon.astro';
 import { SOCIALS } from '../constants';
 import PROJECTS from '../data/projects';
 
@@ -34,7 +34,14 @@ import '../styles/global.css';
 				A few of the personal/passion projects (among many) that I’ve desgined and built over the
 				last few years. 🚀
 			</p>
-			<List items={PROJECTS} />
+			<ul class="list">
+				{PROJECTS.map((project) => (
+					<li class="list-item">
+						<h4 class="title"><a href={project.url} target="__blank">{project.title} <ShareIcon /></a></h4>
+						<p class="description" set:html={project.description} />
+					</li>
+				))}
+			</ul>
 		</section>
 		<section>
 			<h2 class="section-title">Misc.</h2>

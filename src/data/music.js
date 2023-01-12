@@ -1,5 +1,15 @@
 export default [
 	{
+		slug: 'week-2',
+		week: 2,
+		month: 'Jan',
+		date: new Date('January 12, 2023 00:00:00'),
+		dw: '1H0g6b0oiuB93Jbu0Dkk7g',
+		rr: '5tuESsTLVPdBP38cndMG33',
+		aboutFavs: `Overall I don't think I liked this week quite as much as the previous.`,
+		favs: []
+	},
+	{
 		slug: 'week-1',
 		week: 1,
 		month: 'Jan',

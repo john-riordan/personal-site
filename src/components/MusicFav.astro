@@ -1,0 +1,33 @@
+---
+import ShareIcon from './SVGs/ShareIcon.astro';
+
+const { title, url, external, description, embedLink } = Astro.props;
+---
+
+<li class="list-item">
+  {url ? (
+    <h4 class="title"><a href={url} target={external && "_blank"}>{title} <ShareIcon /></a></h4>
+  ) : (
+    <h4 class="title">{title}</h4>
+  )}
+  <div class="content">
+    {embedLink && (
+      <div>
+        <iframe
+          src={embedLink}
+          width="100%"
+          height="80"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+    )}
+    {description && (
+      <p class="description" set:html={description}></p>
+    )}
+  </div>
+</li>
+
+<style lang="scss">
+</style>
