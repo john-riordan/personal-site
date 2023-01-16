@@ -238,13 +238,11 @@ li {
 }
 
 .list {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
+	display: grid;
+	gap: 2.25rem;
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	padding-top: 1rem;
 }
 .list-item {
 	--padd: 1.5rem;
