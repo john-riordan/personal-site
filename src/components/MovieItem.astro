@@ -1,0 +1,56 @@
+---
+import ShareIcon from './SVGs/ShareIcon.astro';
+import FromNow from './FromNow.svelte';
+
+const { url, external, title, watchedDate, trailer, description, rating } = Astro.props;
+const trailerEmbed = trailer && `https://www.youtube.com/embed/${trailer}`
+const stars = new Array(5).fill(0).map((_, i) => i + 1);
+---
+
+<li class="list-item">
+  {url ? (
+    <h4 class="title"><a href={url} target={external && "_blank"}>{title} <ShareIcon /></a></h4>
+  ) : (
+    <h4 class="title">{title}</h4>
+  )}
+  <div class="content">
+    <span class="description">
+      Watched <FromNow date={watchedDate} client:visible />
+    </span>
+    <div class="stars">
+      {stars.map((star) => (
+        <div class:list={['star', { filled: rating >= star }]} />
+      ))}
+    </div>
+    {trailerEmbed && (
+      <div>
+        <iframe
+          src={trailerEmbed}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    )}
+    {description && (
+      <p class="description" set:html={description}></p>
+    )}
+  </div>
+</li>
+
+<style lang="scss">
+  .stars {
+    display: flex;
+    gap: 0.25rem;
+
+    .star {
+      --fill: var(--c7);
+      width: 0.5rem;
+      height: 0.5rem;
+      background: var(--fill); 
+    }
+    .filled {
+      --fill: var(--accent); 
+    }
+  }
+</style>

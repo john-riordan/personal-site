@@ -158,6 +158,15 @@ a:hover {
 	color: var(--accent);
 }
 
+hr {
+	display: block;
+	width: 100%;
+	margin-block: 2rem;
+	height: 1px;
+	background: var(--c9);
+	border: none;
+}
+
 svg {
 	display: block;
 	width: 1em;
@@ -165,6 +174,7 @@ svg {
 }
 
 iframe {
+	display: block;
 	border: none;
 }
 
@@ -227,6 +237,68 @@ li {
 	transform: translateX(-2vw);
 }
 
+.list {
+	display: grid;
+	gap: 2.25rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.list-item {
+	--padd: 1.5rem;
+}
+.list-item > * {
+	padding-left: var(--padd);
+}
+.list-item .title {
+	position: relative;
+	font-size: 1.25rem;
+}
+.list-item .title::before {
+	content: '';
+	position: absolute;
+	height: 0.25rem;
+	width: 0.25rem;
+	background: var(--accent);
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.list-item .title a {
+	display: flex;
+	align-items: center;
+	gap: 0.75ch;
+	text-decoration: none;
+}
+
+.list-item .title svg {
+	flex-shrink: 0;
+	fill: var(--accent);
+	font-size: 1rem;
+	transform: translateY(-0.125rem);
+}
+
+.list-item .content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.list-item .description {
+	color: var(--c4);
+}
+
+.rating {
+	display: flex;
+	gap: 0.25rem;
+}
+.rating > * {
+	width: 10px;
+	height: 10px;
+	background: var(--c9);
+}
+
 @media screen and (max-width: 768px) {
 	ul,
 	li {
@@ -250,5 +322,8 @@ li {
 	.sections .section-title {
 		font-size: 2rem;
 		transform: translateX(-3vw);
+	}
+	.list-item {
+		--padd: 1rem;
 	}
 }

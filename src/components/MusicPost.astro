@@ -1,6 +1,6 @@
 ---
-import List from './List.astro';
 import FromNow from './FromNow.svelte';
+import Song from './MusicFav.astro';
 
 import '../styles/global.css';
 
@@ -13,19 +13,6 @@ const songEmbed = (songId) =>
 const songLink = (songId) => `https://open.spotify.com/track/${songId}?si=4b4d83c9031a449d`;
 
 const { post } = Astro.props;
-const favs = post?.favs.map((fav) => {
-	return {
-		title: `${fav.name} - ${fav.artist}`,
-		url: songLink(fav.id),
-		external: true,
-		description: fav.notes,
-		miscHTML: `
-      <iframe src="${songEmbed(
-				fav.id
-			)}" width="100%" height="80"  allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    `
-	};
-});
 ---
 
 <div class="latest">
@@ -46,7 +33,17 @@ const favs = post?.favs.map((fav) => {
           ones that stood out this week.
         </p>
       )}
-			<List items={favs} />
+			<ul class="list">
+				{post.favs.map((fav) => (
+					<Song
+						external
+						url={songLink(fav.id)}
+						embedLink={songEmbed(fav.id)}
+						title={`${fav.name} - ${fav.artist}`}
+						description={fav.notes}
+					/>
+				))}
+			</ul>
 		</section>
 		<section id="dw">
 			<h4 class="section-title">Discover Weekly</h4>
@@ -64,7 +61,6 @@ const favs = post?.favs.map((fav) => {
 			>
 			</iframe>
 		</section>
-		
 		<section id="rr">
 			<h4 class="section-title">Release Radar</h4>
 			<p>
@@ -80,7 +76,6 @@ const favs = post?.favs.map((fav) => {
 			>
 			</iframe>
 		</section>
-		<hr />
 	</div>
 </div>
 
@@ -112,12 +107,5 @@ const favs = post?.favs.map((fav) => {
 	.favs {
 		display: grid;
 		gap: 1rem;
-	}
-
-	hr {
-		width: 100%;
-		height: 1px;
-		background: var(--c9);
-		border: none;
 	}
 </style>

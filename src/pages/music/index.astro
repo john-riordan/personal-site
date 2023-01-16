@@ -1,7 +1,7 @@
 ---
 import Layout from '../../components/Layout.astro';
 import MusicPost from '../../components/MusicPost.astro';
-import List from '../../components/List.astro';
+import FromNow from '../../components/FromNow.svelte';
 import MUSIC from '../../data/music';
 
 import '../../styles/global.css';
@@ -19,11 +19,21 @@ const previous = MUSIC.filter((_, i) => i !== 0).map((post) => {
 <Layout title="Music '23 - John Riordan">
 	<div class="container">
 		<MusicPost post={latest} />
-		<div>
-      {previous.length ? (
-        <h2 class="section-title">Previous weeks</h2>
-        <List items={previous} />
-      ) : null}
+		<hr />
+		<div class="sections">
+			<section>
+				<h2 class="section-title">Previous weeks</h2>
+				<ol class="list">
+					{previous.map(post => (
+						<li class="list-item">
+							<h4 class="title"><a href={post.url}>{post.title}</a></h4>
+							<p class="description">
+								Posted <FromNow date={post.postedDate} client:visible />
+							</p>
+						</li>
+					))}
+				</ol>
+			</section>
 		</div>
 	</div>
 </Layout>

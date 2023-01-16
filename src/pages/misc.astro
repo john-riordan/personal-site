@@ -1,6 +1,6 @@
 ---
 import Layout from '../components/Layout.astro';
-import List from '../components/List.astro';
+import ShareIcon from '../components/SVGs/ShareIcon.astro';
 import PROJECTS from '../data/misc';
 
 import '../styles/global.css';
@@ -17,5 +17,12 @@ import '../styles/global.css';
 			explore ideas.
 		</span>
 	</p>
-	<List items={PROJECTS} />
+	<ul class="list">
+		{PROJECTS.map((project) => (
+			<li class="list-item">
+				<h4 class="title"><a href={project.url} target="__blank">{project.title} <ShareIcon /></a></h4>
+				<p class="description" set:html={project.description} />
+			</li>
+		))}
+	</ul>
 </Layout>

@@ -1,5 +1,34 @@
 export default [
 	{
+		slug: 'week-2',
+		week: 2,
+		month: 'Jan',
+		date: new Date('January 12, 2023 00:00:00'),
+		dw: '1H0g6b0oiuB93Jbu0Dkk7g',
+		rr: '5tuESsTLVPdBP38cndMG33',
+		aboutFavs: `Overall I don't think I liked this week quite as much as the <a href="/music/week-1">previous</a>.`,
+		favs: [
+			{
+				id: '29Dx55ymImTU6QpiaAhk0d',
+				name: `Rothko`,
+				artist: 'Delores Forever',
+				notes: null
+			},
+			{
+				id: '5pndlJQdlED4WH8ew72EDS',
+				name: `GLAD IT'S OVER`,
+				artist: 'Ilmani Graham',
+				notes: null
+			},
+			{
+				id: '5CwA7YPNAcXVJmazELgRc0',
+				name: 'sometimes',
+				artist: 'Heather Sommer',
+				notes: null
+			}
+		]
+	},
+	{
 		slug: 'week-1',
 		week: 1,
 		month: 'Jan',
