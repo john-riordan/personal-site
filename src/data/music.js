@@ -6,7 +6,7 @@ export default [
 		date: new Date('January 12, 2023 00:00:00'),
 		dw: '1H0g6b0oiuB93Jbu0Dkk7g',
 		rr: '5tuESsTLVPdBP38cndMG33',
-		aboutFavs: `Overall I don't think I liked this week quite as much as the previous.`,
+		aboutFavs: `Overall I don't think I liked this week quite as much as the <a href="/music/week-1">previous</a>.`,
 		favs: [
 			{
 				id: '29Dx55ymImTU6QpiaAhk0d',
