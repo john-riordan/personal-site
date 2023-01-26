@@ -1,5 +1,40 @@
 export default [
 	{
+		slug: 'week-3',
+		week: 3,
+		month: 'Jan',
+		date: new Date('January 23, 2023 00:00:00'),
+		dw: '2CbjY0DzNLNzzxdsxMJEgl',
+		rr: '2qErfuqQq6Q3eaJuLP7P1e',
+		aboutFavs: `This weeek is a bit late. I haven't been feeling very inspired lately if I'm being honest. The only really standout here to me is M83 is back with some new tunes (I didn't love his previous album).`,
+		favs: [
+			{
+				id: '6rp15O3RvL5sOMjHfLjxTK',
+				name: 'your mom',
+				artist: 'corook',
+				notes: `There is something about this type of tune and lyrics that just hit me different.`
+			},
+			{
+				id: '2hFlY5xuAXrjY24v3a1mpZ',
+				name: `Oceans Niagra`,
+				artist: 'M83',
+				notes: `M83 used to be one of my favorite listens but I was admittedly not a fan of his latest before going silent for a few years. Fortunately I like this and he's touring so I scooped some tickets.`
+			},
+			{
+				id: '7hx7f6U9ul5JVGiRtGwNVU',
+				name: `Barking Dog`,
+				artist: 'Dizzy',
+				notes: null
+			},
+			{
+				id: '0L06aZLoX6BRT0hUPh7O5g',
+				name: 'Grapefruit',
+				artist: 'Tove Lo',
+				notes: null
+			}
+		]
+	},
+	{
 		slug: 'week-2',
 		week: 2,
 		month: 'Jan',
