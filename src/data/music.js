@@ -1,5 +1,34 @@
 export default [
 	{
+		slug: 'week-4',
+		week: 4,
+		month: 'Jan',
+		date: new Date('February 5, 2023 00:00:00'),
+		dw: '2BgA6jIFVdZht43EBByhka',
+		rr: '0p9IGuFPwKK1PVSvHJjqMC',
+		aboutFavs: `I'm quite late this week. Honestly just not feeling entirely inspired. In a bit of a rut. Hopefully this week is better.`,
+		favs: [
+			{
+				id: '2NS5hylxl4QNQcD6Vjmtpj',
+				name: 'True Blue',
+				artist: 'boygenius',
+				notes: `Look, its boygenius. What more do I need to say? I'll be doing whatever and going wherever to see them on tour this year.`
+			},
+			{
+				id: '1sfU6KaG2UwGv5rxzLgCPR',
+				name: 'Moonburn',
+				artist: 'Dani Sylvia',
+				notes: `So fun. This is pure pure dance music to me. I love everything about this so much`
+			},
+			{
+				id: '4qMczFE2vwWPot1WrqzNGN',
+				name: 'Be a Woman',
+				artist: 'DeLaurentis',
+				notes: `This sounds like it could be the title song of a movie I would absolutely love.`
+			}
+		]
+	},
+	{
 		slug: 'week-3',
 		week: 3,
 		month: 'Jan',
