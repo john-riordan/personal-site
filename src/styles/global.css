@@ -5,17 +5,17 @@
 
 :root {
 	--h: 240deg;
-	--s: 8%;
+	--s: 10%;
 
-	--c1-hsl: var(--h) var(--s) 90%;
-	--c2-hsl: var(--h) var(--s) 85%;
-	--c3-hsl: var(--h) var(--s) 80%;
-	--c4-hsl: var(--h) var(--s) 70%;
-	--c5-hsl: var(--h) var(--s) 65%;
-	--c6-hsl: var(--h) var(--s) 50%;
-	--c7-hsl: var(--h) var(--s) 35%;
-	--c8-hsl: var(--h) var(--s) 20%;
-	--c9-hsl: var(--h) var(--s) 15%;
+	--c1-hsl: var(--h) var(--s) 80%;
+	--c2-hsl: var(--h) var(--s) 75%;
+	--c3-hsl: var(--h) var(--s) 70%;
+	--c4-hsl: var(--h) var(--s) 65%;
+	--c5-hsl: var(--h) var(--s) 55%;
+	--c6-hsl: var(--h) var(--s) 40%;
+	--c7-hsl: var(--h) var(--s) 25%;
+	--c8-hsl: var(--h) var(--s) 18%;
+	--c9-hsl: var(--h) var(--s) 10%;
 	--c10-hsl: var(--h) var(--s) 10%;
 
 	--c1: hsl(var(--c1-hsl));
@@ -55,10 +55,10 @@
 
 body {
 	position: relative;
-	font-family: 'Source Code Pro', monospace;
+	font-family: 'Inter', system-ui, sans-serif;
 	font-size: 1em;
 	font-weight: 400;
-	line-height: 1.5;
+	line-height: 1.6;
 	width: 100%;
 	min-height: 100vh;
 	background: var(--c10);
@@ -140,7 +140,6 @@ h5 {
 a {
 	color: inherit;
 	text-decoration-color: var(--accent);
-	transition: color 0.2s ease-in-out;
 }
 a:hover {
 	color: var(--accent);
