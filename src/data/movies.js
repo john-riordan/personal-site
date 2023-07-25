@@ -4,7 +4,7 @@ export default [
 		title: 'The Banshees of Inisherin',
 		description: `
 		  My favorite kind of movie. Just 2 people in a room talking. Doesn't hurt that 
-			the Riordans make a cameo 😉.
+			the Riordans make a cameo.
 		`,
 		date: new Date('January 8, 2023 10:00:00'),
 		imdb: 'https://www.imdb.com/title/tt11813216/',

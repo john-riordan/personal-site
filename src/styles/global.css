@@ -5,7 +5,7 @@
 
 :root {
 	--h: 240deg;
-	--s: 10%;
+	--s: 8%;
 
 	--c1-hsl: var(--h) var(--s) 80%;
 	--c2-hsl: var(--h) var(--s) 75%;
@@ -16,7 +16,7 @@
 	--c7-hsl: var(--h) var(--s) 25%;
 	--c8-hsl: var(--h) var(--s) 18%;
 	--c9-hsl: var(--h) var(--s) 10%;
-	--c10-hsl: var(--h) var(--s) 10%;
+	--c10-hsl: var(--h) var(--s) 8%;
 
 	--c1: hsl(var(--c1-hsl));
 	--c2: hsl(var(--c2-hsl));
