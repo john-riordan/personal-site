@@ -1,18 +1,30 @@
 ---
-	const { type = 'legendary', title, subtitle, itemPower, statMajor, statMajorComponents = [], implicit, affixes = [] } = Astro.props;
+	const {
+		type = 'legendary',
+		img,
+		title,
+		subtitle,
+		itemPower,
+		statMajor,
+		statMajorComponents = [],
+		implicit,
+		affixes = [],
+		special
+	} = Astro.props;
 
 	const regex = /\[(.*?)](%?)/g;
-	function wrapTextInSpan(match, group1, group2) {
+	function wrapTextInSpan(_: void, group1: string, group2: string) {
 		const content = group2 === '%' ? `[${group1}]%` : `[${group1}]`;
 		return `<span>${content}</span>`;
 	}
 
-	const formattedAffixes = affixes.map((a) => {
+	const formattedAffixes = affixes.map((a: any) => {
 		return a.replace(regex, wrapTextInSpan)
 	})
 ---
 
 <div class={`item ${type}`}>
+	<img class="art" src={`/assets/diablo4/art/${img}`} />
 	<div class="content">
 		<h1 class="title">{title}</h1>
 		<span class="subtitle">{subtitle}</span>
@@ -21,7 +33,7 @@
 		<span class="stat-major">{statMajor}</span>
 		{statMajorComponents.length && (
 			<ol class="breakdown">
-				{statMajorComponents.map((stat) => (
+				{statMajorComponents.map((stat: string) => (
 					<li>{stat}</li>
 				))}
 			</ol>
@@ -30,18 +42,24 @@
 		<hr class="full" />
 		{statMajorComponents.length && (
 			<ol class="affixes">
-				{formattedAffixes.map((affix) => (
+				{formattedAffixes.map((affix: string) => (
 					<li class="empty" set:html={affix} />
 				))}
-				<li class="special">
-					<slot />
-				</li>
+				<li class="special" set:html={special} />
 			</ol>
 		)}
 	</div>
 </div>
 
 <style lang="scss">
+	.art {
+		position: absolute;
+    top: 0;
+    right: 0;
+    translate: -20% 2%;
+    width: 100px;
+		aspect-ratio: 1 / 1.5;
+	}
 	.title {
 		font-family: "Exocet";
     font-size: 1.5rem;
@@ -99,6 +117,8 @@
 	}
 
 	.item {
+		position: relative;
+		flex-shrink: 0;
 		width: 410px;
     padding: 2.5rem 2.25rem;
 		font-family: 'PT Serif', serif;
@@ -200,6 +220,7 @@
 					background-image: url(/assets/diablo4/item/3759295089.webp);
 					background-size: cover;
 					filter: brightness(1);
+					translate: 0 -0.15lh;
 				}
 
 				:global(u) {

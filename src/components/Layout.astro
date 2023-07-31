@@ -4,9 +4,7 @@ import '@styles/global.css';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 
-const { title, url } = Astro.props;
-
-const wide = url === '/diablo4/items';
+const { title, url, wide } = Astro.props;
 ---
 
 <html lang="en">
@@ -32,7 +30,7 @@ const wide = url === '/diablo4/items';
 		box-sizing: content-box;
 		display: flex;
 		align-items: flex-start;
-		gap: 5rem;
+		gap: 4rem;
 		padding: 11vw;
 
 		@media screen and (max-width: 1200px) {
@@ -42,6 +40,7 @@ const wide = url === '/diablo4/items';
 		}
 
 		.content {
+			width: 100%;
 			max-width: 60ch;
 
 			&.wide {
