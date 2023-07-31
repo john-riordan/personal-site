@@ -1,8 +1,12 @@
 ---
-import Header from './Header.astro';
-import Footer from './Footer.astro';
+import '@styles/global.css';
 
-const { title } = Astro.props;
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+
+const { title, url } = Astro.props;
+
+const wide = url === '/diablo4/items';
 ---
 
 <html lang="en">
@@ -15,7 +19,7 @@ const { title } = Astro.props;
 	<body>
 		<main>
 			<Header />
-			<div class="content">
+			<div class:list={['content', { wide }]}>
 				<slot />
 				<Footer />
 			</div>
@@ -39,6 +43,10 @@ const { title } = Astro.props;
 
 		.content {
 			max-width: 60ch;
+
+			&.wide {
+				max-width: 90ch;
+			}
 		}
 	}
 	@font-face {

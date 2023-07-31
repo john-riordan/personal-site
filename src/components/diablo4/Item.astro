@@ -1,0 +1,246 @@
+---
+	const { type = 'legendary', title, subtitle, itemPower, statMajor, statMajorComponents = [], implicit, affixes = [] } = Astro.props;
+
+	const regex = /\[(.*?)](%?)/g;
+	function wrapTextInSpan(match, group1, group2) {
+		const content = group2 === '%' ? `[${group1}]%` : `[${group1}]`;
+		return `<span>${content}</span>`;
+	}
+
+	const formattedAffixes = affixes.map((a) => {
+		return a.replace(regex, wrapTextInSpan)
+	})
+---
+
+<div class={`item ${type}`}>
+	<div class="content">
+		<h1 class="title">{title}</h1>
+		<span class="subtitle">{subtitle}</span>
+		<span class="item-power">{itemPower} Item Power</span>
+		<hr class="half" />
+		<span class="stat-major">{statMajor}</span>
+		{statMajorComponents.length && (
+			<ol class="breakdown">
+				{statMajorComponents.map((stat) => (
+					<li>{stat}</li>
+				))}
+			</ol>
+		)}
+		<span>{implicit}</span>
+		<hr class="full" />
+		{statMajorComponents.length && (
+			<ol class="affixes">
+				{formattedAffixes.map((affix) => (
+					<li class="empty" set:html={affix} />
+				))}
+				<li class="special">
+					<slot />
+				</li>
+			</ol>
+		)}
+	</div>
+</div>
+
+<style lang="scss">
+	.title {
+		font-family: "Exocet";
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-style: unset;
+    text-shadow: 0 1px 2px black;
+    font-weight: 500;
+    letter-spacing: -1px;
+		line-height: 1.2;
+		
+		.unique & {
+			color: #dca779;
+		}
+	}
+	.subtitle,
+	.item-power {
+		display: block;
+	}
+	.stat-major {
+		color: #e3e0d9;
+		font-size: 1.35rem;
+		text-shadow: 0 1px 2px black;
+	}
+	.breakdown {
+		li {
+
+		}
+	}
+	.affixes {
+    display: grid;
+    grid-auto-rows: auto;
+    gap: 0.25rem;
+		padding-left: 1.25em;
+
+		:global(span) {
+			color: #9C9C9C;
+		}
+
+		li {
+			&::before {
+				content: "";
+				display: inline-block;
+				height: 1lh;
+				left: -1.25em;
+				position: absolute;
+				top: 0.1em;
+				width: 1em;
+				background-position: center 35%;
+				background-repeat: no-repeat;
+				background-size: 1ch;
+				filter: brightness(0.65);
+				background-image: url(/assets/diablo4/item/2627966652.webp);
+			}
+		}
+	}
+
+	.item {
+		width: 410px;
+    padding: 2.5rem 2.25rem;
+		font-family: 'PT Serif', serif;
+		font-weight: 500;
+		font-size: 1.1rem;
+		line-height: 1.4;
+		color: #B4AA9C;
+		filter: drop-shadow(0px 7px 9px black);
+
+		&.legendary {
+
+		}
+		&.unique {
+			background-repeat: no-repeat;
+			background-image: url(/assets/diablo4/item/1477700437.webp),
+				url(/assets/diablo4/item/1764126282.webp),
+				url(/assets/diablo4/item/1526734248.webp),
+				url(/assets/diablo4/item/3780277120.webp),
+				url(/assets/diablo4/item/202353459.webp),
+				url(/assets/diablo4/item/4146987251.webp),
+				url(/assets/diablo4/item/3758777576.webp),
+				url(/assets/diablo4/item/3713853190.webp),
+				url(/assets/diablo4/item/4019188336.webp),
+				url(/assets/diablo4/item/1112478331.webp),
+				url(/assets/diablo4/item/2359306638.webp),
+				url(/assets/diablo4/item/3139483174.webp),
+				url(/assets/diablo4/item/147002314.webp),
+				url(/assets/diablo4/item/530989721.webp),
+				url(/assets/diablo4/item/4129811150.webp),
+				url(/assets/diablo4/item/1254623705.webp),
+				url(/assets/diablo4/item/2755136684.webp),
+				url(/assets/diablo4/item/1505111514.webp),
+				url(/assets/diablo4/item/2191061733.webp),
+				url(/assets/diablo4/item/3592820536.webp),
+				url(/assets/diablo4/item/147656464.webp),
+				url(/assets/diablo4/item/1927892788.webp),
+				url(/assets/diablo4/item/584956099.webp),
+				url(/assets/diablo4/item/1305988728.webp),
+				url(/assets/diablo4/item/4189434499.webp),
+				url(/assets/diablo4/item/819645078.webp);
+			background-position: left bottom,
+				64px bottom,
+				right bottom,
+				left 64px,
+				right 64px,
+				left top,
+				64px top,
+				right top,
+				left 74.5px bottom 10.5px,
+				left 10.5px bottom 10.5px,
+				right 10.5px bottom 10.5px,
+				left 10.5px top 74.5px,
+				74.5px 74.5px,
+				right 10.5px top 74.5px,
+				left 74.5px top 10.5px,
+				left 10.5px top 10.5px,
+				right 10.5px top 10.5px,
+				left 43px bottom 10.5px,
+				left 10.5px bottom 10.5px,
+				right 10.5px bottom 10.5px,
+				left 10.5px top 43px,
+				43px,
+				right 10.5px top 43px,
+				left 43px top 10.5px,
+				left 10.5px top 10.5px,
+				right 10.5px top 10.5px;
+			background-size: 64px,
+				calc(100% - 128px) 64px,
+				64px,
+				64px calc(100% - 128px),
+				64px calc(100% - 128px),
+				64px,
+				calc(100% - 128px) 64px,
+				64px,
+				calc(100% - 149px) 64px,
+				64px,
+				64px,
+				64px calc(100% - 149px),
+				calc(100% - 149px) calc(100% - 149px),
+				64px calc(100% - 149px),
+				calc(100% - 149px) 64px,
+				64px,
+				64px,
+				calc(100% - 86px) 33px,
+				33px,
+				33px,
+				33px calc(100% - 86px),
+				calc(100% - 86px) calc(100% - 86px),
+				33px calc(100% - 86px),
+				calc(100% - 86px) 33px,
+				33px,
+				33px;
+
+			.special {
+				color: #dca779;
+				line-height: 1.25;
+
+				&::before {
+					background-image: url(/assets/diablo4/item/3759295089.webp);
+					background-size: cover;
+					filter: brightness(1);
+				}
+
+				:global(u) {
+					color: #e3e0d9;
+				}
+				:global(r) {
+					color: #AAAAFF;
+				}
+			}
+		}
+	}
+	
+	hr {
+		display: block;
+		background-repeat: no-repeat;
+		background-size: auto 10px;
+		height: 10px;
+		margin: 0.5rem 0;
+		background-color: transparent;
+    margin-right: auto;
+
+		&.half {
+			background-image: url(/assets/diablo4/item/2998176818.webp);
+			background-position: left;
+		}
+		&.full {
+			background-image: url(/assets/diablo4/item/4137763948.webp);
+			background-position: center;
+		}
+	}
+
+	@font-face {
+		font-family: 'PT Serif';
+		src: url(/assets/diablo4/PTSerif-Regular.ttf);
+		font-weight: 500;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: 'Exocet';
+		src: url(/assets/diablo4/Exocet-Medium.ttf);
+		font-weight: 500;
+		font-display: swap;
+	}
+</style>

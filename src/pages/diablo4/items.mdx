@@ -1,0 +1,24 @@
+---
+layout: '@components/Layout.astro'
+---
+
+import Item from '@components/diablo4/Item.astro';
+
+<Item
+	type="unique"
+	title="WAXING GIBBOUS"
+	subtitle="Sacred Unique Axe"
+	itemPower="725"
+	statMajor="854 Damage Per Second"
+	statMajorComponents={['[622 - 932] Damage per Hit', '.10 Attacks per Second (Fast Weapon)']}
+	implicit="+28.0% Damage to Healthy Enemies"
+	affixes={[
+		'68 Life On Kill [42 - 101]',
+		'18.2% Damage to Close Enemies [16.5 - 23.5]%',
+		'[10.5 - 17.5]% Critical Strike Damage',
+		'[21.0 - 35.0]% Damage to Injured Enemies'
+	]}
+>
+	Gain <u>Stealth</u> for 2 seconds when killing enemies with Shred. Breaking Stealth with an attack
+	grants Ambush which guarantees Critical Strikes for <r>[1.0 - 2.5]</r> seconds.
+</Item>

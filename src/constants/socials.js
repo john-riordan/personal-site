@@ -1,6 +1,6 @@
 const EMAIL = 'iam.john.riordan@gmail.com';
 
-export const SOCIALS = {
+export default {
 	twitter: 'https://twitter.com/johnriordan',
 	linkedin: 'https://www.linkedin.com/in/riordanjohn/',
 	email: EMAIL,
