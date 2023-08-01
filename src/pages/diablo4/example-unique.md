@@ -1,7 +1,7 @@
 ---
 layout: '@components/diablo4/ItemLayout.astro'
 date: 7/30/2023
-type: legendary
+type: unique
 title: Waxing Gibbous
 img: 2DInventory_Axes_35197504.webp
 subtitle: Sacred Unique Axe

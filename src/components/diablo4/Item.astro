@@ -28,23 +28,35 @@
 	<div class="content">
 		<h1 class="title">{title}</h1>
 		<span class="subtitle">{subtitle}</span>
-		<span class="item-power">{itemPower} Item Power</span>
+		{itemPower && (
+			<span class="item-power">{itemPower} Item Power</span>
+		)}
 		<hr class="half" />
-		<span class="stat-major">{statMajor}</span>
-		{statMajorComponents.length && (
+		{statMajor && (
+			<span class="stat-major">{statMajor}</span>
+		)}
+		{statMajorComponents.length ? (
 			<ol class="breakdown">
 				{statMajorComponents.map((stat: string) => (
 					<li>{stat}</li>
 				))}
 			</ol>
+		) : null}
+		{implicit && (
+			<>
+				<span>{implicit}</span>
+				<hr class="full" />
+			</>
 		)}
-		<span>{implicit}</span>
-		<hr class="full" />
-		{statMajorComponents.length && (
+		{statMajorComponents.length ? (
 			<ol class="affixes">
 				{formattedAffixes.map((affix: string) => (
 					<li class="empty" set:html={affix} />
 				))}
+				<li class="special" set:html={special} />
+			</ol>
+		) : (
+			<ol class="affixes">
 				<li class="special" set:html={special} />
 			</ol>
 		)}
@@ -58,10 +70,10 @@
     right: 0;
     translate: -20% 2%;
     width: 100px;
-		aspect-ratio: 1 / 1.5;
+		height: auto;
 	}
 	.title {
-		font-family: "Exocet";
+		font-family: "Exocet", serif;
     font-size: 1.5rem;
     text-transform: uppercase;
     font-style: unset;
@@ -69,7 +81,11 @@
     font-weight: 500;
     letter-spacing: -1px;
 		line-height: 1.2;
+		width: 11ch;
 		
+		.legendary & {
+			color: #F78003;
+		}
 		.unique & {
 			color: #dca779;
 		}
@@ -128,37 +144,9 @@
 		color: #B4AA9C;
 		filter: drop-shadow(0px 7px 9px black);
 
-		&.legendary {
-
-		}
+		&.legendary,
 		&.unique {
 			background-repeat: no-repeat;
-			background-image: url(/assets/diablo4/item/1477700437.webp),
-				url(/assets/diablo4/item/1764126282.webp),
-				url(/assets/diablo4/item/1526734248.webp),
-				url(/assets/diablo4/item/3780277120.webp),
-				url(/assets/diablo4/item/202353459.webp),
-				url(/assets/diablo4/item/4146987251.webp),
-				url(/assets/diablo4/item/3758777576.webp),
-				url(/assets/diablo4/item/3713853190.webp),
-				url(/assets/diablo4/item/4019188336.webp),
-				url(/assets/diablo4/item/1112478331.webp),
-				url(/assets/diablo4/item/2359306638.webp),
-				url(/assets/diablo4/item/3139483174.webp),
-				url(/assets/diablo4/item/147002314.webp),
-				url(/assets/diablo4/item/530989721.webp),
-				url(/assets/diablo4/item/4129811150.webp),
-				url(/assets/diablo4/item/1254623705.webp),
-				url(/assets/diablo4/item/2755136684.webp),
-				url(/assets/diablo4/item/1505111514.webp),
-				url(/assets/diablo4/item/2191061733.webp),
-				url(/assets/diablo4/item/3592820536.webp),
-				url(/assets/diablo4/item/147656464.webp),
-				url(/assets/diablo4/item/1927892788.webp),
-				url(/assets/diablo4/item/584956099.webp),
-				url(/assets/diablo4/item/1305988728.webp),
-				url(/assets/diablo4/item/4189434499.webp),
-				url(/assets/diablo4/item/819645078.webp);
 			background-position: left bottom,
 				64px bottom,
 				right bottom,
@@ -212,6 +200,85 @@
 				33px,
 				33px;
 
+				.special {
+					:global(u) {
+						color: #e3e0d9;
+					}
+					:global(r) {
+						color: #AAAAFF;
+					}
+				}
+		}
+		&.legendary {
+			background-image: url(/assets/diablo4/item/1477700437.webp),
+				url(/assets/diablo4/item/1764126282.webp),
+				url(/assets/diablo4/item/1526734248.webp),
+				url(/assets/diablo4/item/3780277120.webp),
+				url(/assets/diablo4/item/202353459.webp),
+				url(/assets/diablo4/item/4146987251.webp),
+				url(/assets/diablo4/item/3758777576.webp),
+				url(/assets/diablo4/item/3713853190.webp),
+				url(/assets/diablo4/item/2627685972.webp),
+				url(/assets/diablo4/item/1571930207.webp),
+				url(/assets/diablo4/item/341349362.webp),
+				url(/assets/diablo4/item/740280586.webp),
+				url(/assets/diablo4/item/3050467246.webp),
+				url(/assets/diablo4/item/2961682941.webp),
+				url(/assets/diablo4/item/543043890.webp),
+				url(/assets/diablo4/item/2579685949.webp),
+				url(/assets/diablo4/item/3532517776.webp),
+				url(/assets/diablo4/item/1505111514.webp),
+				url(/assets/diablo4/item/2191061733.webp),
+				url(/assets/diablo4/item/3592820536.webp),
+				url(/assets/diablo4/item/147656464.webp),
+				url(/assets/diablo4/item/1927892788.webp),
+				url(/assets/diablo4/item/584956099.webp),
+				url(/assets/diablo4/item/1305988728.webp),
+				url(/assets/diablo4/item/4189434499.webp),
+				url(/assets/diablo4/item/819645078.webp);
+
+			.special {
+				color: #df8020;
+				line-height: 1.25;
+				margin-block: 0.25rem;
+
+				&::before {
+					background-image: url(/assets/diablo4/item/3759295089.webp);
+					background-size: cover;
+					filter: brightness(1);
+					translate: 0 -0.15lh;
+				}
+			}
+		}
+		&.unique {
+			background-repeat: no-repeat;
+			background-image: url(/assets/diablo4/item/1477700437.webp),
+				url(/assets/diablo4/item/1764126282.webp),
+				url(/assets/diablo4/item/1526734248.webp),
+				url(/assets/diablo4/item/3780277120.webp),
+				url(/assets/diablo4/item/202353459.webp),
+				url(/assets/diablo4/item/4146987251.webp),
+				url(/assets/diablo4/item/3758777576.webp),
+				url(/assets/diablo4/item/3713853190.webp),
+				url(/assets/diablo4/item/4019188336.webp),
+				url(/assets/diablo4/item/1112478331.webp),
+				url(/assets/diablo4/item/2359306638.webp),
+				url(/assets/diablo4/item/3139483174.webp),
+				url(/assets/diablo4/item/147002314.webp),
+				url(/assets/diablo4/item/530989721.webp),
+				url(/assets/diablo4/item/4129811150.webp),
+				url(/assets/diablo4/item/1254623705.webp),
+				url(/assets/diablo4/item/2755136684.webp),
+				url(/assets/diablo4/item/1505111514.webp),
+				url(/assets/diablo4/item/2191061733.webp),
+				url(/assets/diablo4/item/3592820536.webp),
+				url(/assets/diablo4/item/147656464.webp),
+				url(/assets/diablo4/item/1927892788.webp),
+				url(/assets/diablo4/item/584956099.webp),
+				url(/assets/diablo4/item/1305988728.webp),
+				url(/assets/diablo4/item/4189434499.webp),
+				url(/assets/diablo4/item/819645078.webp);
+
 			.special {
 				color: #dca779;
 				line-height: 1.25;
@@ -222,13 +289,6 @@
 					background-size: cover;
 					filter: brightness(1);
 					translate: 0 -0.15lh;
-				}
-
-				:global(u) {
-					color: #e3e0d9;
-				}
-				:global(r) {
-					color: #AAAAFF;
 				}
 			}
 		}
