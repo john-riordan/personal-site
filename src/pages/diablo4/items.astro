@@ -1,0 +1,17 @@
+---
+import Layout from "@components/Layout.astro";
+
+const posts = await Astro.glob('./*.md');
+---
+
+<Layout>
+  <div>
+    {posts.slice(0, 4).map((post) => (
+      <article>
+        <h2>{post.frontmatter.title}</h2>
+        <p>{post.frontmatter.description}</p>
+        <a href={post.url}>Read more</a>
+      </article>
+    ))}
+  </div>
+</Layout>
