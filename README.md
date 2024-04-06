@@ -1,1 +1,3 @@
-# [Astro](https://astro.build) personal website for johnr.io
+## [Astro](https://astro.build) website for johnr.io
+
+Just my personal site. Nothing to see here
