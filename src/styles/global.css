@@ -81,14 +81,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-thumb:hover {
 	background: var(--accent);
 }
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection,
-h5::selection,
-p::selection,
-span::selection,
-a::selection {
+*::selection {
 	color: var(--c10);
 	background: var(--accent);
 }

@@ -1,0 +1,42 @@
+---
+import Layout from '@components/Layout.astro';
+import Item from '@components/diablo4/Item.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout wide title={`${frontmatter.title} Diablo 4 Item - John Riordan`}>
+  <section>
+    <div class="item">
+      <Item
+        type={frontmatter.type}
+        title={frontmatter.title}
+        img={frontmatter.img}
+        subtitle={frontmatter.subtitle}
+        itemPower={frontmatter.itemPower}
+        statMajor={frontmatter.statMajor}
+        statMajorComponents={frontmatter.statMajorComponents}
+        implicit={frontmatter.implicit}
+        affixes={frontmatter.affixes}
+        special={frontmatter.special}
+      />
+      <div class="description">
+      <slot />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  section {
+    container-type: inline-size;
+    container-name: item-info;
+  }
+  .item {
+    display: flex;
+    gap: 1rem;
+  }
+  .description {
+    flex: 1;
+  }
+</style>

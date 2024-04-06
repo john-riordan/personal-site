@@ -1,10 +1,8 @@
 ---
-import Layout from '../../components/Layout.astro';
-import MusicPost from '../../components/MusicPost.astro';
-import FromNow from '../../components/FromNow.svelte';
-import MUSIC from '../../data/music';
-
-import '../../styles/global.css';
+import Layout from '@components/Layout.astro';
+import MusicPost from '@components/MusicPost.astro';
+import FromNow from '@components/FromNow.svelte';
+import MUSIC from '@data/music';
 
 const latest = MUSIC[0];
 const previous = MUSIC.filter((_, i) => i !== 0).map((post) => {
