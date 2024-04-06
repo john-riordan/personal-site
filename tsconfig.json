@@ -1,13 +1,13 @@
 {
-	"compilerOptions": {
-		"baseUrl": ".",
-		"moduleResolution": "node",
-		"paths": {
-			"@components/*": ["src/components/*"],
-			"@assets/*": ["src/assets/*"],
-			"@data/*": ["src/data/*"],
-			"@styles/*": ["src/styles/*"],
-			"@constants/*": ["src/constants/*"]
-		}
-	}
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
+      "@data/*": ["src/data/*"],
+      "@styles/*": ["src/styles/*"],
+      "@constants/*": ["src/constants/*"]
+    }
+  }
 }

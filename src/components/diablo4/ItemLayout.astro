@@ -1,6 +1,6 @@
 ---
-import Layout from '@components/Layout.astro';
-import Item from '@components/diablo4/Item.astro';
+import Layout from "@components/Layout.astro";
+import Item from "@components/diablo4/Item.astro";
 
 const { frontmatter } = Astro.props;
 ---
@@ -21,7 +21,7 @@ const { frontmatter } = Astro.props;
         special={frontmatter.special}
       />
       <div class="description">
-      <slot />
+        <slot />
       </div>
     </div>
   </section>

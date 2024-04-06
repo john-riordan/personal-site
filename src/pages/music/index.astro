@@ -1,41 +1,48 @@
 ---
-import Layout from '@components/Layout.astro';
+import Layout from "@components/Layout.astro";
 ---
 
 <Layout title="Music - John Riordan">
-	<p>I've been adding to this playlist for over 10 years now. Follow along as I find new music I enjoy.</p>
-	<p>(it seems this embedded playlist is in reverse chronological order so the OGs are at the top and latest at the bottom)</p>
-	<iframe
-		style="border-radius:12px"
-		src="https://open.spotify.com/embed/playlist/3gMqbUFUZkkptawvbzxXXB?utm_source=generator&theme=0"
-		width="100%"
-		height="600"
-		frameborder="0"
-		allowfullscreen=""
-		allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-		loading="lazy">
-	</iframe>
+  <p>
+    I've been adding to this playlist for over 10 years now. Follow along as I find new music I
+    enjoy.
+  </p>
+  <p>
+    (it seems this embedded playlist is in reverse chronological order so the OGs are at the top and
+    latest at the bottom)
+  </p>
+  <iframe
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/playlist/3gMqbUFUZkkptawvbzxXXB?utm_source=generator&theme=0"
+    width="100%"
+    height="600"
+    frameborder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy"
+  >
+  </iframe>
 </Layout>
 
 <style lang="scss">
-	.container {
-		display: grid;
-		gap: 6rem;
-	}
-	.list {
-		display: grid;
-		gap: 4em;
-		padding: 0;
-	}
-	.favs {
-		display: grid;
-		gap: 1rem;
-	}
-	.notes {
-		color: var(--c5);
-		font-size: 0.875em;
-	}
-	p {
-		margin-block-end: 1em;
-	}
+  .container {
+    display: grid;
+    gap: 6rem;
+  }
+  .list {
+    display: grid;
+    gap: 4em;
+    padding: 0;
+  }
+  .favs {
+    display: grid;
+    gap: 1rem;
+  }
+  .notes {
+    color: var(--c5);
+    font-size: 0.875em;
+  }
+  p {
+    margin-block-end: 1em;
+  }
 </style>

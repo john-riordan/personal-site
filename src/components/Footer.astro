@@ -1,31 +1,31 @@
 ---
-import SOCIALS from '@constants/socials';
+import SOCIALS from "@constants/socials";
 ---
 
 <footer>
-	<a href={SOCIALS.emailWithSubject}>iam.john.riordan@gmail.com</a>
-	<a href={SOCIALS.twitter}>Twitter</a>
-	<a href={SOCIALS.linkedin}>LinkedIn</a>
-	<a href={SOCIALS.github}>GitHub</a>
-	<a href="/resume.pdf">Resume</a>
+  <a href={SOCIALS.emailWithSubject}>iam.john.riordan@gmail.com</a>
+  <a href={SOCIALS.twitter}>Twitter</a>
+  <a href={SOCIALS.linkedin}>LinkedIn</a>
+  <a href={SOCIALS.github}>GitHub</a>
+  <a href="/resume.pdf">Resume</a>
 </footer>
 
 <style lang="scss">
-	footer {
-		display: flex;
-		align-items: center;
-		flex-wrap: wrap;
-		gap: 2rem;
-		padding-top: 7rem;
-		font-size: 0.75rem;
+  footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 7rem;
+    font-size: 0.75rem;
 
-		@media (max-width: 600px) {
-			flex-direction: column;
-			gap: 1rem;
-		}
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-		a {
-			text-decoration: none;
-		}
-	}
+    a {
+      text-decoration: none;
+    }
+  }
 </style>

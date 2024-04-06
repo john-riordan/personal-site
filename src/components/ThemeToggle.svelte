@@ -1,5 +1,5 @@
 <script>
-  let theme = "dark"
+  let theme = "dark";
 
   function toggleTheme() {
     const body = document.querySelector("body");
@@ -14,11 +14,8 @@
       body.classList.add("dark");
     }
 
-    
     // if (body) body.toggle
   }
 </script>
 
-<button on:click={toggleTheme}>
-  Toggle Theme
-</button>
+<button on:click={toggleTheme}> Toggle Theme </button>

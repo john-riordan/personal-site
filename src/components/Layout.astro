@@ -1,72 +1,72 @@
 ---
-import '@styles/global.css';
+import "@styles/global.css";
 
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 
 const { title, url, wide } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{title}</title>
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	</head>
-	<body>
-		<main>
-			<Header />
-			<div class:list={['content', { wide }]}>
-				<slot />
-				<Footer />
-			</div>
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <main>
+      <Header />
+      <div class:list={["content", { wide }]}>
+        <slot />
+        <Footer />
+      </div>
+    </main>
+  </body>
 </html>
 
 <style lang="scss">
-	main {
-		box-sizing: content-box;
-		display: flex;
-		align-items: flex-start;
-		gap: 4rem;
-		padding: 11vw;
+  main {
+    box-sizing: content-box;
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 11vw;
 
-		@media screen and (max-width: 1200px) {
-			display: grid;
-			padding: 12vw 10vw;
-			gap: 2rem;
-		}
+    @media screen and (max-width: 1200px) {
+      display: grid;
+      padding: 12vw 10vw;
+      gap: 2rem;
+    }
 
-		.content {
-			width: 100%;
-			max-width: 60ch;
+    .content {
+      width: 100%;
+      max-width: 60ch;
 
-			&.wide {
-				max-width: 90ch;
-			}
-		}
-	}
-	@font-face {
-		font-family: 'Exo';
-		font-style: italic;
-		font-weight: 900;
-		font-display: swap;
-		src: url('/Exo-BlackItalic.woff') format('woff2');
-	}
-	@font-face {
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 400;
-		font-display: swap;
-		src: url('/Inter-Regular.woff') format('woff2');
-	}
-	@font-face {
-		font-family: 'Inter';
-		font-style: normal;
-		font-weight: 700;
-		font-display: swap;
-		src: url('/Inter-Black.woff') format('woff2');
-	}
+      &.wide {
+        max-width: 90ch;
+      }
+    }
+  }
+  @font-face {
+    font-family: "Exo";
+    font-style: italic;
+    font-weight: 900;
+    font-display: swap;
+    src: url("/Exo-BlackItalic.woff") format("woff2");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/Inter-Regular.woff") format("woff2");
+  }
+  @font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/Inter-Black.woff") format("woff2");
+  }
 </style>
