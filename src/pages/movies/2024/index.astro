@@ -7,8 +7,6 @@ const movies = await Astro.glob("./markdown/*.md");
 const moviesSorted = movies.sort((a, b) => {
 	return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
 });
-
-console.log(moviesSorted[3].rawContent());
 ---
 
 <Layout title="Movies 2024 - John Riordan">
