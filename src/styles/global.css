@@ -7,8 +7,8 @@
 	--h: 240deg;
 	--s: 8%;
 
-	--c1-hsl: var(--h) var(--s) 80%;
-	--c2-hsl: var(--h) var(--s) 75%;
+	--c1-hsl: var(--h) var(--s) 90%;
+	--c2-hsl: var(--h) var(--s) 80%;
 	--c3-hsl: var(--h) var(--s) 70%;
 	--c4-hsl: var(--h) var(--s) 65%;
 	--c5-hsl: var(--h) var(--s) 55%;
@@ -37,7 +37,7 @@
 
 @supports (background: paint(something)) {
 	@property --accent-h {
-		syntax: '<angle>';
+		syntax: "<angle>";
 		inherits: false;
 		initial-value: 40deg;
 	}
@@ -55,7 +55,7 @@
 
 body {
 	position: relative;
-	font-family: 'Inter', system-ui, sans-serif;
+	font-family: "Inter", system-ui, sans-serif;
 	font-size: 1em;
 	font-weight: 400;
 	line-height: 1.6;
@@ -104,7 +104,7 @@ h2,
 h3,
 h4,
 h5 {
-	font-family: 'Exo', sans-serif;
+	font-family: "Exo", sans-serif;
 	font-weight: 900;
 	font-style: italic;
 	text-transform: uppercase;
@@ -184,7 +184,7 @@ li {
 	color: var(--c1);
 }
 .page-title .underline::after {
-	content: '';
+	content: "";
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -236,7 +236,7 @@ li {
 	line-height: 1.8;
 }
 .list-item .title::before {
-	content: '';
+	content: "";
 	position: absolute;
 	height: 0.25rem;
 	width: 0.25rem;

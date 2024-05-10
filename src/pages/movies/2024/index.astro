@@ -1,0 +1,63 @@
+---
+import Layout from "@components/Layout.astro";
+
+const movies = await Astro.glob("./markdown/*.md");
+
+// Sorted by latest seen first
+const moviesSorted = movies.sort((a, b) => {
+	return new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime();
+});
+
+console.log(moviesSorted[3].rawContent());
+---
+
+<Layout title="Movies 2024 - John Riordan">
+	<!-- <h1 class="page-title">
+		<span>2024</span>
+		<span><span class="underline">Movies</span></span>
+	</h1> -->
+	<ol class="movies-grid">
+		{
+			moviesSorted.map((movie) => (
+				<li class="movie">
+					<article>
+						<img
+							src={`/assets/movies/${movie.frontmatter.poster}`}
+							alt={`${movie.frontmatter.title} Movie Poster`}
+							class="poster"
+							width="179"
+							height="270"
+						/>
+						<div>
+							<h2 class="movie-title">{movie.frontmatter.title}</h2>
+							<span>{movie.frontmatter.date}</span>
+							<blockquote>{movie.rawContent()}</blockquote>
+						</div>
+					</article>
+				</li>
+			))
+		}
+	</ol>
+</Layout>
+
+<style>
+	.movies-grid {
+		display: grid;
+		gap: 2rem;
+		/* grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); */
+		padding: 0;
+	}
+	.movie {
+		article {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+	}
+	.poster {
+		width: 100%;
+		height: auto;
+		max-width: 8rem;
+		aspect-ratio: 46 / 69;
+	}
+</style>

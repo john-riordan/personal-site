@@ -1,28 +1,34 @@
 ---
-import Layout from '@components/Layout.astro';
-import ShareIcon from '@components/SVGs/ShareIcon.astro';
-import PROJECTS from '@data/misc';
+import Layout from "@components/Layout.astro";
+import ShareIcon from "@components/SVGs/ShareIcon.astro";
+import PROJECTS from "@data/misc";
 
-import '@styles/global.css';
+import "@styles/global.css";
 ---
 
 <Layout title="Misc. Projects - John Riordan">
-	<h1 class="page-title">
-		<span>Misc.</span>
-		<span><span class="underline">stuff</span></span>
-	</h1>
-	<p class="byline">
-		<span>
-			Random little weekend projects with minimal thought/effort, mostly as a means to learn and
-			explore ideas.
-		</span>
-	</p>
-	<ul class="list">
-		{PROJECTS.map((project) => (
-			<li class="list-item">
-				<h4 class="title"><a href={project.url} target="__blank">{project.title} <ShareIcon /></a></h4>
-				<p class="description" set:html={project.description} />
-			</li>
-		))}
-	</ul>
+  <h1 class="page-title">
+    <span>Misc.</span>
+    <span><span class="underline">stuff</span></span>
+  </h1>
+  <p class="byline">
+    <span>
+      Random little weekend projects with minimal thought/effort, mostly as a means to learn and
+      explore ideas.
+    </span>
+  </p>
+  <ul class="list">
+    {
+      PROJECTS.map((project) => (
+        <li class="list-item">
+          <h4 class="title">
+            <a href={project.url} target="__blank">
+              {project.title} <ShareIcon />
+            </a>
+          </h4>
+          <p class="description" set:html={project.description} />
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

@@ -1,60 +1,62 @@
 ---
-import Layout from '@components/Layout.astro';
-import FromNow from '@components/FromNow.svelte';
-import MOVIES from '@data/movies';
-import Movie from '@components/MovieItem.astro';
+import Layout from "@components/Layout.astro";
+import FromNow from "@components/FromNow.svelte";
+import MOVIES from "@data/movies";
+import Movie from "@components/MovieItem.astro";
 ---
 
 <Layout title="Movies & TV '23 - John Riordan">
-	<h1 class="page-title">
-		<span>2023 TV &</span>
-		<span><span class="underline">Movies</span></span>
-	</h1>
-	<span class="byline">Updated <FromNow date={MOVIES[0].date} client:load /></span>
-	<div class="container">
-		<div class="sections">
-			<section>
-				<h4 class="section-title">My 2023 movie history</h4>
-				<p>
-					This year is looking to be a good one for movies. 2022 was the unofficial "return to
-					threaters" with the likes of Top Gun: Maverick, The Batman, Nope, and Avatar: The Way of
-					Water. While not quite as big as the pre-covid days, the year was still strong and I'm
-					hoping 2023 continues that.
-				</p>
-				<p>Here is a list of what I've watched so far this year.</p>
-				<hr />
-				<hr />
-				<ol class="list">
-					{MOVIES.map((movie) => (
-						<Movie
-							external
-							url={movie.imdb}
-							title={movie.title}
-							watchedDate={movie.date}
-							trailer={movie.youtube}
-							rating={movie.rating}
-							description={movie.description}
-						/>
-					))}
-				</ol>
-			</section>
-		</div>
-	</div>
+  <h1 class="page-title">
+    <span>2023 TV &</span>
+    <span><span class="underline">Movies</span></span>
+  </h1>
+  <span class="byline">Updated <FromNow date={MOVIES[0].date} client:load /></span>
+  <div class="container">
+    <div class="sections">
+      <section>
+        <h4 class="section-title">My 2023 movie history</h4>
+        <p>
+          This year is looking to be a good one for movies. 2022 was the unofficial "return to
+          threaters" with the likes of Top Gun: Maverick, The Batman, Nope, and Avatar: The Way of
+          Water. While not quite as big as the pre-covid days, the year was still strong and I'm
+          hoping 2023 continues that.
+        </p>
+        <p>Here is a list of what I've watched so far this year.</p>
+        <hr />
+        <hr />
+        <ol class="list">
+          {
+            MOVIES.map((movie) => (
+              <Movie
+                external
+                url={movie.imdb}
+                title={movie.title}
+                watchedDate={movie.date}
+                trailer={movie.youtube}
+                rating={movie.rating}
+                description={movie.description}
+              />
+            ))
+          }
+        </ol>
+      </section>
+    </div>
+  </div>
 </Layout>
 
 <style lang="scss">
-	.container {
-		display: grid;
-		gap: 6rem;
-	}
-	img {
-		width: 240px;
-	}
-	:global(iframe) {
-		width: 100% !important;
-		aspect-ratio: 16 / 9;
-	}
-	.note {
-		color: var(--c5);
-	}
+  .container {
+    display: grid;
+    gap: 6rem;
+  }
+  img {
+    width: 240px;
+  }
+  :global(iframe) {
+    width: 100% !important;
+    aspect-ratio: 16 / 9;
+  }
+  .note {
+    color: var(--c5);
+  }
 </style>

@@ -1,8 +1,8 @@
 ---
-import '@styles/global.css';
+import "@styles/global.css";
 
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
 
 const { title, url, wide } = Astro.props;
 ---
@@ -17,7 +17,7 @@ const { title, url, wide } = Astro.props;
 	<body>
 		<main>
 			<Header />
-			<div class:list={['content', { wide }]}>
+			<div class:list={["content", { wide }]}>
 				<slot />
 				<Footer />
 			</div>
@@ -31,7 +31,7 @@ const { title, url, wide } = Astro.props;
 		display: flex;
 		align-items: flex-start;
 		gap: 4rem;
-		padding: 11vw;
+		padding: 9vw;
 
 		@media screen and (max-width: 1200px) {
 			display: grid;
@@ -41,7 +41,7 @@ const { title, url, wide } = Astro.props;
 
 		.content {
 			width: 100%;
-			max-width: 60ch;
+			max-width: 70ch;
 
 			&.wide {
 				max-width: 90ch;
@@ -49,24 +49,24 @@ const { title, url, wide } = Astro.props;
 		}
 	}
 	@font-face {
-		font-family: 'Exo';
+		font-family: "Exo";
 		font-style: italic;
 		font-weight: 900;
 		font-display: swap;
-		src: url('/Exo-BlackItalic.woff') format('woff2');
+		src: url("/Exo-BlackItalic.woff") format("woff2");
 	}
 	@font-face {
-		font-family: 'Inter';
+		font-family: "Inter";
 		font-style: normal;
 		font-weight: 400;
 		font-display: swap;
-		src: url('/Inter-Regular.woff') format('woff2');
+		src: url("/Inter-Regular.woff") format("woff2");
 	}
 	@font-face {
-		font-family: 'Inter';
+		font-family: "Inter";
 		font-style: normal;
 		font-weight: 700;
 		font-display: swap;
-		src: url('/Inter-Black.woff') format('woff2');
+		src: url("/Inter-Black.woff") format("woff2");
 	}
 </style>

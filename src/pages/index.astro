@@ -1,124 +1,133 @@
 ---
-import Twitter from '@components/SVGs/Twitter.astro';
-import Discord from '@components/SVGs/Discord.astro';
-import LinkedIn from '@components/SVGs/LinkedIn.astro';
-import Mail from '@components/SVGs/Mail.astro';
-import Github from '@components/SVGs/Github.astro';
-import Layout from '@components/Layout.astro';
-import ShareIcon from '@components/SVGs/ShareIcon.astro';
-import SOCIALS from '@constants/socials';
-import PROJECTS from '@data/projects';
+import Twitter from "@components/SVGs/Twitter.astro";
+import Discord from "@components/SVGs/Discord.astro";
+import LinkedIn from "@components/SVGs/LinkedIn.astro";
+import Mail from "@components/SVGs/Mail.astro";
+import Github from "@components/SVGs/Github.astro";
+import Layout from "@components/Layout.astro";
+import ShareIcon from "@components/SVGs/ShareIcon.astro";
+import SOCIALS from "@constants/socials";
+import PROJECTS from "@data/projects";
 ---
 
 <Layout title="John Riordan">
-	<h1 class="page-title">
-		<span>John</span>
-		<span><span class="underline">Rio</span>rdan</span>
-	</h1>
-	<p class="byline">
-		<span>Senior Product Designer/Engineer at <a href="https://blitz.gg">TSM/Blitz</a></span>
-	</p>
-	<div class="sections">
-		<section>
-			<h2 class="section-title">About</h2>
-			<p>
-				Gamer nerd 🤓 with a (potentially?) unhealthly obsession with educating and solving problems
-				for other gamers. Most call me Rio.
-			</p>
-		</section>
-		<section>
-			<h2 class="section-title">Projects</h2>
-			<p>
-				A few of the personal/passion projects (among many) that I’ve desgined and built over the
-				last few years. 🚀
-			</p>
-			<ul class="list">
-				{PROJECTS.map((project) => (
-					<li class="list-item">
-						<h4 class="title"><a href={project.url} target="__blank">{project.title} <ShareIcon /></a></h4>
-						<p class="description" set:html={project.description} />
-					</li>
-				))}
-			</ul>
-		</section>
-		<section>
-			<h2 class="section-title">Misc.</h2>
-			<p>
-				In my free time I like to explore my passion with
-				<a href="/misc"><strong>miscellaneous side projects.</strong></a>
-				These projects are important to me in a lot of ways but mainly because they're an opportunity
-				for me to learn. Often times these side projects lead to much bigger things and I owe a *lot*
-				of my career growth to this kind of exploration.
-			</p>
-		</section>
-		<section>
-			<h2 class="section-title">Music</h2>
-			<strong><a href="/music">Follow along 🎶🎵🎼</a></strong>
-			<p>
-				Most of my music listening these days is done through Spotify (LoFi Girl if I'm working). 
-				I've been using the platform for well over a decade now, and the vast majority of that is strictly 
-				just Discover Weekly and Release Radar because there are few things I love more than finding new music 
-				(nachos being one of them).
-			</p>
-			<p>
-				I have a <a href="https://open.spotify.com/playlist/3gMqbUFUZkkptawvbzxXXB?si=e0bfa0455d1143bb">master playlist</a> 
-				that I've kept updated for over 10 years now. It's a bit of a time capsule and
-				you can clearly trace the different music phases I've gone through over the years.
-			</p>
-		</section>
-		<section>
-			<h2 class="section-title">Movies</h2>
-			<strong><a href="/movies">Follow along 🎥🎬🍿</a></strong>
-			<p>
-				Similar to the above music diary, I plan to catalogue the movies I watch throughout 2023.
-				Unlike the music I won't have dedicated week-by-week posts, but rather a long running list 
-				of things I see as I see them (some may be movies that came out in late 2022, sorry).
-			</p>
-		</section>
-		<section>
-			<h2 class="section-title">Contact</h2>
-			<p>I'm "incredibly online" so there are a number of ways to reach me. Pick your poison 🧪</p>
-			<ul class="contact-list">
-				<li class="list-item-title">
-					<Twitter />
-					<a href={SOCIALS.twitter}>@johnriordan</a>
-				</li>
-				<li class="list-item-title">
-					<Discord />{SOCIALS.discord}
-				</li>
-				<li class="list-item-title">
-					<LinkedIn />
-					<a href={SOCIALS.linkedin}>LinkedIn</a>
-				</li>
-				<li class="list-item-title">
-					<Mail />
-					<a href={SOCIALS.emailWithSubject}>iam.john.riordan@gmail.com</a>
-				</li>
-				<li class="list-item-title">
-					<Github />
-					<a href={SOCIALS.github}>john-riordan</a>
-				</li>
-			</ul>
-		</section>
-	</div>
+  <h1 class="page-title">
+    <span>John</span>
+    <span><span class="underline">Rio</span>rdan</span>
+  </h1>
+  <p class="byline">
+    <span>Senior Product Designer/Engineer at <a href="https://blitz.gg">TSM/Blitz</a></span>
+  </p>
+  <div class="sections">
+    <section>
+      <h2 class="section-title">About</h2>
+      <p>
+        Gamer nerd 🤓 with a (potentially?) unhealthly obsession with educating and solving problems
+        for other gamers. Most call me Rio.
+      </p>
+    </section>
+    <section>
+      <h2 class="section-title">Projects</h2>
+      <p>
+        A few of the personal/passion projects (among many) that I’ve desgined and built over the
+        last few years. 🚀
+      </p>
+      <ul class="list">
+        {
+          PROJECTS.map((project) => (
+            <li class="list-item">
+              <h4 class="title">
+                <a href={project.url} target="__blank">
+                  {project.title} <ShareIcon />
+                </a>
+              </h4>
+              <p class="description" set:html={project.description} />
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+    <section>
+      <h2 class="section-title">Misc.</h2>
+      <p>
+        In my free time I like to explore my passion with
+        <a href="/misc"><strong>miscellaneous side projects.</strong></a>
+        These projects are important to me in a lot of ways but mainly because they're an opportunity
+        for me to learn. Often times these side projects lead to much bigger things and I owe a *lot*
+        of my career growth to this kind of exploration.
+      </p>
+    </section>
+    <section>
+      <h2 class="section-title">Music</h2>
+      <strong><a href="/music">Follow along 🎶🎵🎼</a></strong>
+      <p>
+        Most of my music listening these days is done through Spotify (LoFi Girl if I'm working).
+        I've been using the platform for well over a decade now, and the vast majority of that is
+        strictly just Discover Weekly and Release Radar because there are few things I love more
+        than finding new music (nachos being one of them).
+      </p>
+      <p>
+        I have a <a
+          href="https://open.spotify.com/playlist/3gMqbUFUZkkptawvbzxXXB?si=e0bfa0455d1143bb"
+          >master playlist</a
+        >
+        that I've kept updated for over 10 years now. It's a bit of a time capsule and you can clearly
+        trace the different music phases I've gone through over the years.
+      </p>
+    </section>
+    <section>
+      <h2 class="section-title">Movies</h2>
+      <strong><a href="/movies">Follow along 🎥🎬🍿</a></strong>
+      <p>
+        Similar to the above music diary, I plan to catalogue the movies I watch throughout 2023.
+        Unlike the music I won't have dedicated week-by-week posts, but rather a long running list
+        of things I see as I see them (some may be movies that came out in late 2022, sorry).
+      </p>
+    </section>
+    <section>
+      <h2 class="section-title">Contact</h2>
+      <p>I'm "incredibly online" so there are a number of ways to reach me. Pick your poison 🧪</p>
+      <ul class="contact-list">
+        <li class="list-item-title">
+          <Twitter />
+          <a href={SOCIALS.twitter}>@johnriordan</a>
+        </li>
+        <li class="list-item-title">
+          <Discord />{SOCIALS.discord}
+        </li>
+        <li class="list-item-title">
+          <LinkedIn />
+          <a href={SOCIALS.linkedin}>LinkedIn</a>
+        </li>
+        <li class="list-item-title">
+          <Mail />
+          <a href={SOCIALS.emailWithSubject}>iam.john.riordan@gmail.com</a>
+        </li>
+        <li class="list-item-title">
+          <Github />
+          <a href={SOCIALS.github}>john-riordan</a>
+        </li>
+      </ul>
+    </section>
+  </div>
 </Layout>
 
 <style lang="scss">
-	.contact-list {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 
-		li {
-			display: flex;
-			align-items: center;
-			gap: 0.75rem;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
 
-			:global(svg) {
-				width: 1rem;
-				height: auto;
-				fill: var(--c6);
-			}
-		}
-	}
+      :global(svg) {
+        width: 1rem;
+        height: auto;
+        fill: var(--c6);
+      }
+    }
+  }
 </style>
