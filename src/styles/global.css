@@ -3,44 +3,10 @@
 	margin: 0;
 }
 
-:root {
-	--h: 240deg;
-	--s: 8%;
-
-	--c1-hsl: var(--h) var(--s) 90%;
-	--c2-hsl: var(--h) var(--s) 80%;
-	--c3-hsl: var(--h) var(--s) 70%;
-	--c4-hsl: var(--h) var(--s) 65%;
-	--c5-hsl: var(--h) var(--s) 55%;
-	--c6-hsl: var(--h) var(--s) 40%;
-	--c7-hsl: var(--h) var(--s) 25%;
-	--c8-hsl: var(--h) var(--s) 18%;
-	--c9-hsl: var(--h) var(--s) 10%;
-	--c10-hsl: var(--h) var(--s) 8%;
-
-	--c1: hsl(var(--c1-hsl));
-	--c2: hsl(var(--c2-hsl));
-	--c3: hsl(var(--c3-hsl));
-	--c4: hsl(var(--c4-hsl));
-	--c5: hsl(var(--c5-hsl));
-	--c6: hsl(var(--c6-hsl));
-	--c7: hsl(var(--c7-hsl));
-	--c8: hsl(var(--c8-hsl));
-	--c9: hsl(var(--c9-hsl));
-	--c10: hsl(var(--c10-hsl));
-
-	--accent-h: 40deg;
-	--accent-hsl: var(--accent-h) 100% 60%;
-	--accent: hsl(var(--accent-hsl));
-	animation: rotate-accent 90s linear infinite;
-}
-
-@supports (background: paint(something)) {
-	@property --accent-h {
-		syntax: "<angle>";
-		inherits: false;
-		initial-value: 40deg;
-	}
+@property --accent-h {
+	syntax: "<angle>";
+	inherits: false;
+	initial-value: 40deg;
 }
 
 @keyframes rotate-accent {
@@ -51,6 +17,22 @@
 	50% {
 		--accent-h: 180deg;
 	}
+}
+
+:root {
+	--h: 240deg;
+	--s: 8%;
+
+	--c1: hsl(var(--h) var(--s) 90%);
+	--c2: hsl(var(--h) var(--s) 80%);
+	--c3: hsl(var(--h) var(--s) 70%);
+	--c4: hsl(var(--h) var(--s) 65%);
+	--c5: hsl(var(--h) var(--s) 55%);
+	--c6: hsl(var(--h) var(--s) 40%);
+	--c7: hsl(var(--h) var(--s) 25%);
+	--c8: hsl(var(--h) var(--s) 18%);
+	--c9: hsl(var(--h) var(--s) 10%);
+	--c10: hsl(var(--h) var(--s) 8%);
 }
 
 body {
@@ -64,6 +46,10 @@ body {
 	background: var(--c10);
 	color: var(--c1);
 	overflow-x: hidden;
+
+	--accent-h: 40deg;
+	--accent: hsl(var(--accent-h) 100% 60%);
+	animation: rotate-accent 90s linear infinite;
 }
 
 @media screen and (min-width: 1920px) {
@@ -113,17 +99,19 @@ h5 {
 
 @media (prefers-color-scheme: light) {
 	:root {
-		--c1-hsl: 220deg 7% 10%;
-		--c2-hsl: 220deg 7% 15%;
-		--c3-hsl: 220deg 7% 20%;
-		--c4-hsl: 220deg 7% 25%;
-		--c5-hsl: 220deg 7% 30%;
-		--c6-hsl: 220deg 7% 45%;
-		--c7-hsl: 220deg 7% 55%;
-		--c8-hsl: 220deg 7% 80%;
-		--c9-hsl: 220deg 7% 90%;
-		--c10-hsl: 220deg 7% 95%;
-		--accent-hsl: var(--accent-h) 100% 45%;
+		--c1: hsl(220deg 7% 10%);
+		--c2: hsl(220deg 7% 15%);
+		--c3: hsl(220deg 7% 20%);
+		--c4: hsl(220deg 7% 25%);
+		--c5: hsl(220deg 7% 30%);
+		--c6: hsl(220deg 7% 45%);
+		--c7: hsl(220deg 7% 55%);
+		--c8: hsl(220deg 7% 80%);
+		--c9: hsl(220deg 7% 90%);
+		--c10: hsl(220deg 7% 95%);
+	}
+	body {
+		--accent: hsl(var(--accent-h) 100% 45%);
 	}
 	body::before {
 		content: unset;
