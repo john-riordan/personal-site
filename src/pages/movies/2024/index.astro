@@ -28,8 +28,8 @@ const moviesSorted = movies.sort((a, b) => {
 						/>
 						<div>
 							<h2 class="movie-title">{movie.frontmatter.title}</h2>
-							<span>{movie.frontmatter.date}</span>
-							<blockquote>{movie.rawContent()}</blockquote>
+							<span class="movie-date">{movie.frontmatter.date}</span>
+							{/* <blockquote>{movie.rawContent()}</blockquote> */}
 						</div>
 					</article>
 				</li>
@@ -41,21 +41,28 @@ const moviesSorted = movies.sort((a, b) => {
 <style>
 	.movies-grid {
 		display: grid;
-		gap: 2rem;
-		/* grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); */
+		gap: 1rem;
+		grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
 		padding: 0;
 	}
 	.movie {
 		article {
-			display: flex;
-			align-items: center;
-			gap: 1rem;
+			display: grid;
+			gap: 0.5rem;
 		}
 	}
 	.poster {
 		width: 100%;
 		height: auto;
-		max-width: 8rem;
+		/* max-width: 11rem; */
 		aspect-ratio: 46 / 69;
+	}
+	.movie-title {
+		font-size: 1rem;
+		line-height: 1.2;
+	}
+	.movie-date {
+		font-size: 0.875rem;
+		color: var(--c5);
 	}
 </style>
