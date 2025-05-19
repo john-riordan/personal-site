@@ -203,6 +203,7 @@ li {
 	line-height: 1;
 	color: var(--c8);
 	transform: translateX(-1.5vw);
+	scroll-margin-top: 3rem;
 }
 
 .list {
