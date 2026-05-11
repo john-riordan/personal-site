@@ -11,7 +11,8 @@
 	"devDependencies": {
 		"astro": "^5.0.0-beta.5",
 		"prettier": "^3.2.5",
-		"prettier-plugin-astro": "^0.13.0"
+		"prettier-plugin-astro": "^0.13.0",
+		"wrangler": "^4.90.0"
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^4.0.0-beta.2",
