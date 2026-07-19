@@ -1,7 +1,16 @@
 ---
 import Layout from "@components/Layout.astro";
+import type { MarkdownInstance } from "astro";
 
-const movies = await Astro.glob("./markdown/*.md");
+type MovieFrontmatter = {
+	title: string;
+	date: string | Date;
+	poster: string;
+};
+
+const movies = Object.values(
+	import.meta.glob<MarkdownInstance<MovieFrontmatter>>("./markdown/*.md", { eager: true })
+);
 
 // Sorted by latest seen first
 const moviesSorted = movies.sort((a, b) => {

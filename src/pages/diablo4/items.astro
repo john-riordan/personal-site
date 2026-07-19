@@ -1,19 +1,27 @@
 ---
 import Layout from "@components/Layout.astro";
+import type { MarkdownInstance } from "astro";
 
-const posts = await Astro.glob("./*.md");
+type PostFrontmatter = {
+	title: string;
+	description: string;
+};
+
+const posts = Object.values(
+	import.meta.glob<MarkdownInstance<PostFrontmatter>>("./*.md", { eager: true })
+);
 ---
 
 <Layout>
-  <div>
-    {
-      posts.slice(0, 4).map((post) => (
-        <article>
-          <h2>{post.frontmatter.title}</h2>
-          <p>{post.frontmatter.description}</p>
-          <a href={post.url}>Read more</a>
-        </article>
-      ))
-    }
-  </div>
+	<div>
+		{
+			posts.slice(0, 4).map((post) => (
+				<article>
+					<h2>{post.frontmatter.title}</h2>
+					<p>{post.frontmatter.description}</p>
+					<a href={post.url}>Read more</a>
+				</article>
+			))
+		}
+	</div>
 </Layout>
